@@ -1,0 +1,2307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Essenza Projeto &amp; Madeira | Móveis planejados e marcenaria sob medida</title>
+<meta name="description" content="Cozinhas, quartos, closets, salas, home office e banheiros planejados. Projeto 3D aprovado por você antes da produção, fabricação na marcenaria e montagem na sua casa.">
+<meta name="theme-color" content="#EFE6D9">
+<meta property="og:title" content="Essenza Projeto &amp; Madeira">
+<meta property="og:description" content="Móveis planejados feitos na medida do seu espaço. Projeto 3D aprovado antes da primeira chapa.">
+<meta property="og:type" content="website">
+
+<!--
+  ================= PENDÊNCIAS PARA O CLIENTE (nada disso aparece na página) =================
+  1.  WA_NUMBER no script: trocar '55XXXXXXXXXXX' pelo WhatsApp real.
+  2.  Horário de atendimento (microtexto do hero e rodapé).
+  3.  Cidade, região atendida e endereço (hero, rodapé, card de números).
+  4.  Instagram (rodapé).
+  5.  Fotos reais de obras entregues. Enquanto não houver, toda mídia é de banco
+      (Pexels License). A nota do rodapé avisa que as imagens são de referência.
+  6.  Sexto card de números do cap. 02 (anos de mercado ou ambientes entregues).
+  7.  Prazos médios de produção e montagem (FAQ e etapa 4 do processo).
+  8.  Visita técnica: gratuita ou cobrada, área de cobertura.
+  9.  Projeto 3D: revisões incluídas e cobrança se o cliente não fechar.
+  10. Formas de pagamento e garantia (prazo e cobertura).
+  11. Materiais: MDF (espessuras e linhas), marca de ferragem, fita de borda,
+      instalação elétrica do LED, opções de puxador, amostras na visita.
+  12. Os três compromissos do bloco da empresa.
+  13. CNPJ no rodapé, se o cliente quiser exibir.
+  ==========================================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500;125,600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Sacramento&display=swap">
+<link rel="preload" as="image" href="assets/ed/hero.jpg" media="(min-width:768px)">
+<link rel="preload" as="image" href="assets/ed/hero-v.jpg" media="(max-width:767px)">
+
+<style>
+/* ============================== TOKENS ============================== */
+:root{
+  /* superfícies claras */
+  --cream-50 :#F6F0E7;
+  --cream-100:#EFE6D9;
+  --cream-200:#E4D8C7;
+  --cream-300:#D6C7B2;
+  /* madeira */
+  --walnut-950:#1E160F;
+  --walnut-800:#2E231A;
+  --walnut-700:#4A3A2C;
+  --taupe-500 :#7B7066;
+  /* oliva */
+  --olive-600 :#5E6B3B;
+  --olive-700 :#4C5730;
+  /* cobre, acento único */
+  --copper-500:#C88F56;
+  --copper-700:#7F5227;
+  --copper-300:#D6A673;
+  /* tinta */
+  --ink-900:#221A12;
+  --ink-600:#574C41;
+  --bone-100:#F2EBE0;
+  --bone-400:#C3B7A8;
+  /* linhas */
+  --line-light:color-mix(in srgb, var(--ink-900) 12%, transparent);
+  --line-dark :color-mix(in srgb, var(--bone-100) 16%, transparent);
+  /* utilidade */
+  --wa:#15803D; --error:#8E2C1B; --focus:#7F5227;
+
+  /* tipografia */
+  --display:'Archivo','Arial Black',system-ui,sans-serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --script:'Sacramento',cursive;
+  --fs-faixa:clamp(48px, 11.5vw, 190px);
+  --fs-h1   :clamp(36px, 5.3vw, 80px);
+  --fs-h2   :clamp(30px, 3.1vw, 46px);
+  --fs-h3   :clamp(20px, 1.5vw, 22px);
+  --fs-num  :clamp(40px, 4.4vw, 64px);
+  --fs-lead :clamp(17px, 1.3vw, 19px);
+  --fs-body :16px;
+  --fs-small:14px;
+  --fs-label:11px;
+
+  /* espaço */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px;
+  --s7:48px; --s8:64px; --s9:96px; --s10:140px;
+  --pad:clamp(20px, 4.5vw, 96px);
+  --sec:clamp(88px, 6vw, 140px);
+  --navh:64px;
+
+  /* forma */
+  --r-lg:24px; --r-md:12px; --r-pill:999px;
+  --shadow-card:0 18px 48px -24px color-mix(in srgb, var(--walnut-950) 46%, transparent);
+
+  /* curvas */
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-inout:cubic-bezier(.77,0,.175,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{ background:var(--page-bg, var(--cream-100)); transition:background-color 420ms var(--ease-inout); -webkit-text-size-adjust:100% }
+body{
+  margin:0; background:transparent; color:var(--ink-900);
+  font:400 var(--fs-body)/1.62 var(--sans);
+  overflow-x:hidden; overflow-y:scroll;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg,video{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4,p,ul,ol,figure,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+.on-dark-block :focus-visible,.dk :focus-visible{outline-color:var(--copper-300)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ============================== TIPOS ============================== */
+.dsp{font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:600;text-transform:uppercase;text-wrap:balance}
+.h1{font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:600;text-transform:uppercase;
+    font-size:var(--fs-h1);line-height:.94;letter-spacing:-.022em;text-wrap:balance}
+/* telas muito estreitas (320 a 359): a manchete nao cabe em 36px */
+@media(max-width:359px){ :root{--fs-h1:32px;--fs-h2:27px;--fs-num:36px} }
+.h2{font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:600;text-transform:uppercase;
+    font-size:var(--fs-h2);line-height:1.04;letter-spacing:-.018em;text-wrap:balance}
+.h3{font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:500;text-transform:uppercase;
+    font-size:var(--fs-h3);line-height:1.16;letter-spacing:-.005em}
+.num{font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:600;
+     font-size:var(--fs-num);line-height:1;letter-spacing:-.02em}
+.lead{font-size:var(--fs-lead);line-height:1.55;max-width:58ch;text-wrap:pretty}
+p{text-wrap:pretty}
+.body{max-width:65ch}
+.small{font-size:var(--fs-small);line-height:1.55;letter-spacing:.005em}
+.lbl{font-family:var(--mono);font-weight:500;font-size:var(--fs-label);line-height:1.4;
+     letter-spacing:.22em;text-transform:uppercase}
+.eyebrow{font-family:var(--mono);font-weight:500;font-size:var(--fs-label);letter-spacing:.22em;
+         text-transform:uppercase;color:var(--copper-700)}
+.script{font-family:var(--script);font-weight:400}
+
+/* ============================== GRID ============================== */
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--pad)}
+.wrap-w{max-width:1440px;margin-inline:auto;padding-inline:var(--pad)}
+.cap{padding-block:var(--sec)}
+.bleed{width:100%;position:relative}
+
+/* ============================== BOTÕES ============================== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 26px;border-radius:var(--r-pill);border:1px solid transparent;
+  font-weight:600;font-size:15px;letter-spacing:.005em;text-decoration:none;cursor:pointer;
+  transition:background-color .18s var(--ease-out),color .18s var(--ease-out),
+             border-color .18s var(--ease-out),transform .12s var(--ease-out);
+  white-space:nowrap;max-width:100%}
+@media(max-width:767px){ .btn{white-space:normal;text-align:center;line-height:1.25;padding:14px 20px} }
+.ficha .btn,.sim-form .btn{white-space:normal;text-align:center;line-height:1.25;padding-block:14px}
+.btn .ic{width:19px;height:19px;fill:currentColor;flex:none}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-cu{background:var(--copper-500);color:var(--ink-900)}
+.btn-gh{background:transparent;color:var(--ink-900);border-color:var(--ink-900)}
+.btn-gh-d{background:transparent;color:var(--bone-100);border-color:color-mix(in srgb,var(--bone-100) 55%,transparent)}
+.btn-lg{min-height:58px;padding:0 30px;font-size:16px}
+@media (hover:hover) and (pointer:fine){
+  .btn-wa:hover{background:#116B33}
+  .btn-cu:hover{background:var(--copper-300)}
+  .btn-gh:hover{background:var(--ink-900);color:var(--cream-50)}
+  .btn-gh-d:hover{background:var(--bone-100);color:var(--ink-900);border-color:var(--bone-100)}
+}
+
+/* ============================== PADRÕES DE FUNDO ============================== */
+.pat{position:absolute;pointer-events:none}
+.pat-xadrez{--sq:40px;
+  background-image:
+    linear-gradient(45deg, var(--cream-200) 25%, transparent 25% 75%, var(--cream-200) 75%),
+    linear-gradient(45deg, var(--cream-200) 25%, transparent 25% 75%, var(--cream-200) 75%);
+  background-size:calc(var(--sq)*2) calc(var(--sq)*2);
+  background-position:0 0, var(--sq) var(--sq);
+  -webkit-mask-image:linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent);
+  mask-image:linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent)}
+.pat-reguas{
+  background-image:repeating-linear-gradient(90deg, var(--cream-300) 0 1px, transparent 1px 96px);
+  -webkit-mask-image:linear-gradient(to bottom, transparent, #000 40%, transparent);
+  mask-image:linear-gradient(to bottom, transparent, #000 40%, transparent)}
+.pat-barras{display:grid;grid-template-columns:repeat(9,28px);gap:12px;align-items:end;height:180px;opacity:.55}
+.pat-barras i{background:var(--cream-200);display:block;transform-origin:bottom}
+.pat-barras i:nth-child(1){height:62%} .pat-barras i:nth-child(2){height:100%}
+.pat-barras i:nth-child(3){height:44%} .pat-barras i:nth-child(4){height:88%}
+.pat-barras i:nth-child(5){height:56%} .pat-barras i:nth-child(6){height:74%}
+.pat-barras i:nth-child(7){height:40%} .pat-barras i:nth-child(8){height:96%}
+.pat-barras i:nth-child(9){height:52%}
+@media(max-width:767px){
+  .pat-xadrez{--sq:24px;opacity:.5}
+  .pat-barras{grid-template-columns:repeat(5,20px);gap:8px;height:110px}
+  .pat-barras i:nth-child(n+6){display:none}
+}
+
+/* ============================== MÍDIA E SCRIM ============================== */
+.media{position:absolute;inset:0;overflow:hidden}
+.media img,.media video{width:100%;height:100%;object-fit:cover}
+.scrim-b{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,
+  color-mix(in srgb, var(--walnut-950) 74%, transparent) 0%,
+  color-mix(in srgb, var(--walnut-950) 46%, transparent) 34%,
+  transparent 68%)}
+.scrim-l{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,
+  color-mix(in srgb, var(--walnut-950) 68%, transparent) 0%,
+  transparent 58%)}
+.scrim-f{position:absolute;inset:0;pointer-events:none;
+  background:color-mix(in srgb, var(--walnut-950) 46%, transparent)}
+.scrim-t{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,
+  color-mix(in srgb, var(--walnut-950) 52%, transparent) 0%,
+  transparent 22%)}
+.vinheta{position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 180px 40px color-mix(in srgb, var(--walnut-950) 28%, transparent)}
+.r-top{border-radius:var(--r-lg) var(--r-lg) 0 0;overflow:hidden}
+.r-bot{border-radius:0 0 var(--r-lg) var(--r-lg);overflow:hidden}
+.r-all{border-radius:var(--r-lg);overflow:hidden}
+@media(max-width:767px){ .r-top,.r-bot,.r-all{border-radius:16px} .r-top{border-radius:16px 16px 0 0} .r-bot{border-radius:0 0 16px 16px} }
+
+/* ============================== GRÃO ============================== */
+.grao{position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.035;
+  background-repeat:repeat;background-size:160px 160px;mix-blend-mode:multiply}
+
+/* ============================== NAV ============================== */
+#nav{position:fixed;top:0;left:0;right:0;height:var(--navh);z-index:60;
+  display:flex;align-items:center;
+  transition:background-color .32s var(--ease-out),color .32s var(--ease-out),
+             border-color .32s var(--ease-out),transform .3s var(--ease-out);
+  border-bottom:1px solid transparent;color:var(--ink-900)}
+#nav.tuck{transform:translateY(-100%);pointer-events:none}
+#nav.solid{background:color-mix(in srgb,var(--cream-100) 88%,transparent);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--line-light)}
+#nav.on-dark{color:var(--bone-100)}
+#nav.on-dark.solid{background:color-mix(in srgb,var(--walnut-950) 66%,transparent);border-bottom-color:var(--line-dark)}
+.nav-in{width:100%;max-width:1440px;margin-inline:auto;padding-inline:var(--pad);
+  display:flex;align-items:center;gap:var(--s5)}
+.nav-brand{display:inline-flex;align-items:center;min-height:48px}
+.lockup{height:30px;width:auto;flex:none}
+.lockup .mono{fill:var(--copper-500)}
+.lockup .w,.lockup .s{fill:currentColor}
+#nav.solid:not(.on-dark) .lockup .mono{fill:var(--copper-700)}
+.nav-links{display:flex;gap:26px;margin-left:auto;margin-right:auto}
+.nav-links a{font-size:14px;text-decoration:none;padding:6px 0;position:relative;opacity:.86}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;
+  background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .22s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){ .nav-links a:hover{opacity:1} .nav-links a:hover::after{transform:scaleX(1)} }
+.nav-cta{margin-left:auto}
+.nav-cta .btn{min-height:42px;padding:0 20px;font-size:14px}
+.burger{margin-left:auto;display:none;align-items:center;gap:10px;background:none;border:0;
+  cursor:pointer;font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.22em;
+  text-transform:uppercase;padding:12px 0;min-height:48px}
+.burger i{display:block;width:26px;height:1.5px;background:currentColor;position:relative}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:26px;height:1.5px;background:currentColor}
+.burger i::before{top:-7px} .burger i::after{top:7px}
+/* abaixo de 1024 a nav fica só com a marca e o MENU: o WhatsApp tem um caminho só,
+   a barra fixa na base (e o botão dentro do menu). */
+@media(max-width:1023px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:inline-flex;margin-left:auto}
+}
+
+/* menu mobile */
+#mob{position:fixed;inset:0;z-index:65;background:var(--cream-100);
+  display:flex;flex-direction:column;padding:var(--navh) var(--pad) var(--s7);
+  transform:translateY(-100%);transition:transform .34s var(--ease-inout);visibility:hidden}
+#mob.open{transform:translateY(0);visibility:visible}
+#mob a{text-decoration:none}
+#mob .mlinks{margin-top:var(--s7);display:flex;flex-direction:column;gap:var(--s2)}
+#mob .mlinks a{font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:600;
+  text-transform:uppercase;font-size:30px;line-height:1.3;letter-spacing:-.018em;
+  padding:8px 0;border-bottom:1px solid var(--line-light)}
+#mob .btn{margin-top:auto}
+.mclose{position:absolute;top:12px;right:var(--pad);min-height:44px;background:none;border:0;
+  cursor:pointer;font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.22em;text-transform:uppercase}
+
+/* ============================== FAIXA GIGANTE ============================== */
+.faixa{position:relative;overflow:hidden;display:flex;align-items:center;
+  height:clamp(340px,46vh,520px)}
+.faixa.bg-taupe{background:var(--taupe-500)}
+.faixa.bg-olive{background:var(--olive-600)}
+.faixa__track{display:flex;align-items:center;gap:clamp(20px,3vw,48px);
+  flex:none;will-change:transform;padding-inline:2vw}
+.faixa__track span{font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:600;
+  font-size:var(--fs-faixa);line-height:.86;letter-spacing:-.02em;white-space:nowrap;
+  text-transform:uppercase;color:var(--bone-100)}
+.faixa__ie{height:calc(var(--fs-faixa) * .62);width:auto;flex:none;fill:var(--copper-500)}
+.faixa.on-media{height:clamp(360px,52vh,560px)}
+.faixa.on-media .faixa__track{position:relative;z-index:3}
+.faixa.on-media .scrim-f{background:color-mix(in srgb, var(--walnut-950) 66%, transparent)}
+.vid-palco .scrim-f{background:color-mix(in srgb, var(--walnut-950) 58%, transparent)}
+@media(max-width:1023px){ .faixa{height:38vh;min-height:280px} }
+@media(max-width:767px){
+  .faixa{height:30vh;min-height:200px}
+  .faixa.on-media{height:38vh;min-height:260px}
+  /* no celular a repeticao nunca cabe: uma palavra inteira, centrada, com deriva curta */
+  .faixa__track{justify-content:center;width:100%;padding-inline:var(--pad);gap:14px}
+  .faixa__track>*:nth-child(n+2){display:none}
+  .faixa__track span{font-size:min(var(--fs-faixa),9.5vw)}
+}
+
+/* ============================== 00 HERO ============================== */
+#hero{position:relative;height:100dvh;min-height:560px;overflow:hidden}
+#hero .media{z-index:0}
+#hero .hero-in{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:0 var(--pad) clamp(38px,6vh,64px)}
+#hero .hero-tx{max-width:min(1180px,100%)}
+#hero h1{color:var(--bone-100);margin-bottom:var(--s5);
+  text-shadow:0 2px 18px rgba(20,14,8,.42)}
+#hero h1 .l{display:block;overflow:hidden}
+#hero h1 .l>span{display:block;white-space:nowrap}
+#hero .sub{color:var(--bone-100);font-size:var(--fs-lead);max-width:44ch;margin-bottom:var(--s6);
+  text-shadow:0 1px 10px rgba(20,14,8,.6)}
+#hero .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s4)}
+#hero .micro{color:var(--bone-400);margin-top:var(--s4);font-size:var(--fs-small)}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s5);
+  margin-top:clamp(28px,5vh,56px);padding-top:var(--s4);border-top:1px solid var(--line-dark)}
+.hero-foot .lbl{color:var(--bone-100)}
+.hero-foot .lockup{height:26px}
+.hero-foot .lockup .w,.hero-foot .lockup .s{fill:var(--bone-100)}
+@media(max-width:767px){
+  #hero .scrim-b{background:linear-gradient(to top,
+    color-mix(in srgb, var(--walnut-950) 82%, transparent) 0%,
+    color-mix(in srgb, var(--walnut-950) 62%, transparent) 42%,
+    color-mix(in srgb, var(--walnut-950) 22%, transparent) 78%, transparent 100%)}
+  #hero h1{font-size:34px}
+  #hero h1 .l>span{white-space:normal}
+  .prj-cota{font-size:10px;letter-spacing:.14em}
+  #hero .hero-in{padding-bottom:28px}
+  #hero .cta-row{flex-direction:column;align-items:stretch}
+  #hero .cta-row .btn-wa{width:100%}
+  #hero .cta-row .btn-gh-d{border:0;text-decoration:underline;text-underline-offset:5px;
+    min-height:44px;justify-content:flex-start;padding:0}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:6px}
+  .hero-foot .lockup{display:none}
+}
+/* alturas curtas: celular deitado e telas pequenas. O hero tem que caber inteiro. */
+@media(max-height:620px){
+  #hero{min-height:0}
+  #hero .hero-in{justify-content:center;padding-top:calc(var(--navh) + 8px);padding-bottom:14px}
+  #hero h1{font-size:27px;margin-bottom:10px}
+  #hero .sub{font-size:15px;line-height:1.45;margin-bottom:14px;max-width:58ch}
+  #hero .cta-row{gap:10px}
+  #hero .btn-lg{min-height:48px;font-size:15px}
+  .hero-foot{display:none}
+}
+@media(max-height:620px) and (min-width:768px){
+  #hero h1{font-size:34px}
+  #hero .sub{max-width:48ch}
+}
+@media(max-width:359px){ #hero h1{font-size:30px} }
+/* respiro de secao no celular: 88px em cima e embaixo de um botao sozinho vira tela vazia */
+@media(max-width:767px){ :root{--sec:60px} }
+/* palcos e faixas em altura curta: nada de cena de tela cheia que nao cabe */
+@media(max-height:620px){
+  .palco-prj,.palco-mat{min-height:0;padding-block:calc(var(--navh) + 20px) 32px}
+  .vid-palco{height:auto;min-height:320px;padding-block:0}
+  .vid-palco .media{position:absolute}
+  #mv-build,#mv-mat{max-height:52vh}
+  .faixa,.faixa.on-media{height:auto;min-height:0;padding-block:28px}
+  :root{--sec:56px}
+}
+
+/* ============================== 01 ABERTURA ============================== */
+#abertura{position:relative;overflow:hidden}
+#abertura .ab-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:stretch}
+#abertura .ab-lead{grid-column:1/7;position:relative;z-index:3;margin-bottom:var(--s8)}
+#abertura .ab-lead .l{display:block;overflow:hidden}
+/* cada trecho equilibra as proprias linhas: sem linha longa seguida de linha curtissima no celular */
+#abertura .ab-lead .l>span{display:block;text-wrap:balance}
+#abertura .fig-a{grid-column:1/8;position:relative;z-index:2}
+#abertura .ab-right{grid-column:9/13;display:flex;flex-direction:column;
+  justify-content:space-between;gap:48px;margin-top:-88px;margin-bottom:-56px;
+  position:relative;z-index:3}
+#abertura figure img{width:100%;border-radius:var(--r-lg)}
+#abertura figcaption{margin-top:10px;color:var(--ink-600)}
+#abertura .pat-xadrez{top:6%;right:-4%;width:52%;height:78%;z-index:0}
+#abertura .pat-reguas{top:0;left:30%;width:34%;height:100%;z-index:0}
+@media(max-width:1023px){
+  #abertura .ab-lead{grid-column:1/-1}
+  #abertura .fig-a{grid-column:1/-1}
+  #abertura .ab-right{grid-column:1/-1;flex-direction:row;gap:20px;margin:32px 0 0}
+  #abertura .ab-right figure{flex:1}
+}
+@media(max-width:767px){
+  #abertura .ab-grid{grid-template-columns:repeat(4,1fr);gap:16px}
+  #abertura .ab-lead{margin-bottom:var(--s7)}
+  #abertura .ab-right{gap:14px;margin-top:24px;align-items:flex-start}
+  #abertura .fig-b img{object-fit:cover;height:220px}
+  #abertura .fig-c img{object-fit:cover;height:160px}
+  #abertura .pat-reguas{display:none}
+}
+
+/* ============================== 02 AMBIENTES ============================== */
+#ambientes{position:relative}
+.nums-wrap{position:relative;padding-block:clamp(72px,8vw,120px);overflow:hidden}
+.nums-wrap .media{z-index:0}
+.nums-wrap .media img{transform:scale(1.14)}
+.nums-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ncard{background:var(--cream-50);border-radius:var(--r-lg);padding:28px;
+  box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:10px;min-height:196px}
+.ncard .num{color:var(--ink-900)}
+.ncard .lbl{color:var(--copper-700)}
+.ncard p{color:var(--ink-600);font-size:var(--fs-small);margin-top:auto}
+@media(max-width:1023px){ .nums-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:767px){
+  .nums-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .ncard{padding:18px;min-height:150px;border-radius:16px}
+  .ncard p{font-size:13px;line-height:1.45}
+}
+
+/* ============================== 03 GALERIA ============================== */
+#galeria{position:relative;background:var(--cream-100)}
+.gal-desk{overflow:hidden}
+.gal-track{display:flex;height:100dvh;align-items:stretch}
+.painel{position:relative;width:100vw;flex:none;overflow:hidden;display:flex;align-items:flex-end;
+  padding:0 var(--pad) clamp(48px,7vh,80px)}
+/* o card só aparece com a seção travada, para nunca ser visto cortado na entrada e na saída */
+.gal-desk[data-anim] .gcard{opacity:0;transform:translateY(18px);
+  transition:opacity .34s var(--ease-out),transform .34s var(--ease-out)}
+.gal-desk[data-anim].pinned .gcard{opacity:1;transform:none}
+.painel .media{z-index:0}
+.painel .media img{transform:scale(1.1)}
+.gcard{position:relative;z-index:3;background:var(--cream-50);border-radius:var(--r-lg);
+  padding:28px;max-width:520px;box-shadow:var(--shadow-card);
+  display:grid;grid-template-columns:1fr auto;gap:18px 20px;align-items:end}
+.gcard h3{grid-column:1/2;color:var(--ink-900)}
+.gcard p{grid-column:1/-1;color:var(--ink-600);font-size:var(--fs-small)}
+.gcard .gmeta{grid-column:2/3;align-self:start;justify-self:end;font-family:var(--mono);
+  font-size:var(--fs-label);letter-spacing:.14em;color:var(--copper-700);padding-top:4px}
+.gnav{grid-column:1/-1;display:flex;gap:10px;justify-content:flex-end}
+.gnav button{width:56px;height:56px;border-radius:var(--r-pill);border:1px solid var(--line-light);
+  background:transparent;cursor:pointer;display:grid;place-items:center;
+  transition:background-color .18s var(--ease-out),border-color .18s var(--ease-out)}
+.gnav button svg{width:20px;height:20px;fill:var(--ink-900)}
+.gnav button:first-child svg{transform:rotate(180deg)}
+.gnav button[disabled]{opacity:.32;cursor:default}
+@media (hover:hover) and (pointer:fine){ .gnav button:not([disabled]):hover{background:var(--cream-200);border-color:var(--ink-900)} }
+.gal-mob{display:none}
+/* ate 1023 a galeria e o carrossel por toque: o pan pinado so existe a partir de 1024,
+   entao no tablet as setas do painel nao teriam trigger e so o primeiro painel apareceria */
+@media(max-width:1023px){
+  .gal-desk{display:none}
+  .gal-mob{display:block}
+  .gal-scroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scroll-padding-inline:20px;padding-inline:var(--pad);
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .gal-scroll::-webkit-scrollbar{display:none}
+  .gitem{flex:none;width:86vw;scroll-snap-align:start}
+  .gitem .gimg{position:relative;width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden}
+  .gitem .gimg img{width:100%;height:100%;object-fit:cover}
+  .gitem h3{margin-top:14px}
+  .gitem p{color:var(--ink-600);font-size:var(--fs-small);margin-top:6px}
+  .gbar{height:3px;background:var(--cream-300);margin:22px var(--pad) 0;border-radius:2px;overflow:hidden}
+  .gbar i{display:block;height:100%;width:16.6%;background:var(--copper-700);
+    transform-origin:left;border-radius:2px}
+  .gcount{margin:12px var(--pad) 0;color:var(--ink-600)}
+}
+@media(min-width:768px) and (max-width:1023px){
+  .gitem{width:min(54vw,460px)}
+  .gitem h3{margin-top:18px}
+  .gal-scroll{gap:20px}
+}
+
+/* ============================== 04 PROJETO ============================== */
+#projeto{position:relative}
+.palco-prj{position:relative;min-height:100dvh;display:flex;align-items:center;
+  padding:calc(var(--navh) + 28px) 0 clamp(48px,7vh,90px);overflow:hidden}
+.prj-grid{display:grid;grid-template-columns:minmax(210px,1fr) minmax(0,2.1fr) minmax(190px,.9fr);
+  gap:clamp(24px,3vw,48px);align-items:center;width:100%}
+.prj-bullets li{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line-light)}
+.prj-bullets li:last-child{border-bottom:1px solid var(--line-light)}
+.prj-bullets li::before{content:"";width:18px;height:1px;background:var(--copper-700);margin-top:12px;flex:none}
+.prj-bullets li span{font-size:var(--fs-small);color:var(--ink-600)}
+.steps{position:relative;padding-left:22px;margin-top:var(--s6)}
+.steps .rail{position:absolute;left:4px;top:6px;bottom:6px;width:1px;background:var(--cream-300)}
+.steps .rail-fill{position:absolute;left:4px;top:6px;bottom:6px;width:1px;background:var(--copper-700);
+  transform-origin:top;transform:scaleY(0)}
+.steps .step{position:relative;padding:8px 0;opacity:.42;transition:opacity .3s var(--ease-out)}
+.steps .step.on{opacity:1}
+.steps .step::before{content:"";position:absolute;left:-22px;top:15px;width:9px;height:9px;
+  border-radius:50%;background:var(--cream-300);transition:background-color .3s var(--ease-out)}
+.steps .step.on::before{background:var(--copper-700)}
+.steps .step h3{font-size:15px;font-family:var(--sans);font-weight:600;text-transform:none;letter-spacing:0}
+.steps .step p{font-size:13px;line-height:1.45;color:var(--ink-600);margin-top:2px}
+.prj-mid{position:relative;display:flex;flex-direction:column;align-items:center}
+.prj-mid .pat-reguas{inset:0;width:100%;height:100%;z-index:0;opacity:.7}
+#mv-build{position:relative;z-index:2;width:100%;height:auto}
+#mv-build .trace{fill:none;stroke:var(--ink-900);stroke-width:1.2;vector-effect:non-scaling-stroke;opacity:.9}
+#mv-build .b-wall{stroke:var(--ink-600);stroke-width:1}
+#mv-build .div{fill:none;stroke:var(--copper-700);stroke-width:.9;vector-effect:non-scaling-stroke;opacity:.7}
+#mv-build .cl{fill:none;stroke:var(--copper-700);stroke-width:1;vector-effect:non-scaling-stroke}
+#mv-build .ext{fill:none;stroke:var(--copper-700);stroke-width:.6;vector-effect:non-scaling-stroke;opacity:.6}
+#mv-build .ct{font-family:var(--mono);font-size:16px;fill:var(--copper-700)}
+#mv-build .cava{stroke:var(--walnut-950);stroke-width:2;vector-effect:non-scaling-stroke;opacity:.5}
+.prj-cota{margin-top:14px;color:var(--ink-600);text-align:center}
+.prj-opts{display:flex;flex-direction:column;gap:10px}
+.opt{min-height:52px;border-radius:var(--r-md);border:1px solid var(--line-light);
+  background:var(--cream-50);cursor:pointer;text-align:left;padding:0 18px;
+  font-family:var(--display);font-variation-settings:'wdth' 125;font-weight:500;
+  text-transform:uppercase;font-size:15px;letter-spacing:.01em;
+  transition:background-color .2s var(--ease-out),color .2s var(--ease-out),border-color .2s var(--ease-out)}
+.opt[aria-checked="true"]{background:var(--olive-600);color:var(--bone-100);border-color:var(--olive-700)}
+@media (hover:hover) and (pointer:fine){ .opt:not([aria-checked="true"]):hover{border-color:var(--ink-900)} }
+.opt-help{margin-top:14px;color:var(--ink-600);font-size:13px;line-height:1.5}
+@media(max-width:1023px){
+  .prj-grid{grid-template-columns:1fr;gap:28px}
+  .prj-opts{flex-direction:row;flex-wrap:wrap;overflow:visible;gap:10px;padding-bottom:0;min-width:0}
+  .opt{flex:0 1 auto;border-radius:var(--r-pill);font-size:14px;padding:0 16px}
+  .prj-left{order:3}
+  .prj-mid{order:1} .prj-right{order:2}
+}
+.prj-bar{display:none;height:3px;background:var(--cream-300);border-radius:2px;overflow:hidden;margin-bottom:18px}
+.prj-bar i{display:block;height:100%;background:var(--copper-700);transform-origin:left;transform:scaleX(0)}
+@media(max-width:767px){
+  .prj-bar{display:block}
+  .steps{display:none}
+  /* o palco fica pinado: o topo do desenho precisa passar por baixo da nav sem sumir */
+  .palco-prj{min-height:auto;padding-block:calc(var(--navh) + 18px) 40px}
+  .prj-mid{margin-inline:calc(var(--pad) * -1)}
+  #mv-build{width:100%}
+  .prj-cota{margin-top:10px;padding-inline:var(--pad)}
+}
+
+/* ============================== 05 MATERIAIS ============================== */
+#materiais{position:relative}
+.palco-mat{position:relative;min-height:100dvh;display:flex;align-items:center;
+  padding:calc(var(--navh) + 28px) 0 clamp(40px,6vh,80px)}
+.mat-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(28px,4vw,64px);align-items:center;width:100%}
+.grp{margin-bottom:var(--s6)}
+.grp-l{font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-600);margin-bottom:14px}
+.sw-row{display:flex;flex-wrap:wrap;gap:12px}
+.sw{display:flex;flex-direction:column;gap:8px;align-items:flex-start;background:none;border:0;
+  cursor:pointer;padding:0;font-size:13px;color:var(--ink-600);min-height:48px}
+.sw i{display:block;width:76px;height:76px;border-radius:var(--r-md);background-size:cover;
+  background-color:var(--cream-300);border:1px solid var(--line-light);
+  outline:2px solid transparent;outline-offset:2px;transition:outline-color .2s var(--ease-out)}
+.sw[aria-checked="true"] i{outline-color:var(--copper-700)}
+.sw[aria-checked="true"]{color:var(--ink-900);font-weight:600}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px}
+.pl{display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:0 16px 0 10px;
+  border-radius:var(--r-pill);border:1px solid var(--line-light);background:var(--cream-50);
+  cursor:pointer;font-size:14px;transition:border-color .2s var(--ease-out),background-color .2s var(--ease-out)}
+.pl i{width:26px;height:26px;border-radius:50%;background-size:cover;background-color:var(--cream-300);flex:none}
+.pl[aria-checked="true"]{border-color:var(--copper-700);background:var(--cream-200)}
+.mat-live{color:var(--ink-600);font-size:var(--fs-small)}
+.mv-wrap{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--walnut-800)}
+#mv-mat{width:100%;height:auto;display:block}
+#mv-mat .cava{stroke:rgba(20,14,8,.5);stroke-width:2;vector-effect:non-scaling-stroke}
+.mat-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:var(--s8)}
+.mcard{background:var(--cream-50);border:1px solid var(--line-light);border-radius:var(--r-md);
+  padding:20px;position:relative}
+.mcard h3{font-size:15px;font-family:var(--sans);font-weight:600;text-transform:none;letter-spacing:0;
+  padding-right:40px}
+.mcard .mbtn{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:var(--r-pill);
+  border:1px solid var(--line-light);background:transparent;cursor:pointer;display:grid;place-items:center}
+.mcard .mbtn::before,.mcard .mbtn::after{content:"";position:absolute;background:var(--copper-700);
+  transition:transform .22s var(--ease-out)}
+.mcard .mbtn::before{width:13px;height:1.5px}
+.mcard .mbtn::after{width:1.5px;height:13px}
+.mcard[data-open="true"] .mbtn::after{transform:rotate(90deg)}
+.mcard .mbody{display:grid;grid-template-rows:0fr;transition:grid-template-rows .24s var(--ease-out)}
+.mcard[data-open="true"] .mbody{grid-template-rows:1fr}
+.mcard .mbody>div{overflow:hidden}
+.mcard .mbody p{font-size:13px;line-height:1.5;color:var(--ink-600);padding-top:12px}
+.mcard .mbody img{margin-top:12px;border-radius:8px;width:100%}
+.mat-micro{margin-top:var(--s5);color:var(--ink-600);font-size:var(--fs-small)}
+@media(max-width:1023px){ .mat-cards{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:767px){
+  .palco-mat{min-height:auto;padding-block:36px}
+  .mat-grid{grid-template-columns:1fr;gap:26px}
+  .mat-view{order:1} .mat-pick{order:2}
+  .mat-pick,.grp{min-width:0}
+  .sw-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;
+    flex-wrap:initial;overflow:visible;padding-bottom:0}
+  .sw{flex:none;width:auto;min-width:0;align-items:stretch;text-align:left;font-size:11.5px;line-height:1.25}
+  .sw i{width:100%;height:auto;aspect-ratio:1}
+  .mat-cards{grid-template-columns:1fr;gap:0}
+  .mcard{border-radius:0;border:0;border-bottom:1px solid var(--line-light);background:transparent;
+    padding:18px 0}
+  .mcard .mbtn{right:0;top:12px}
+}
+
+/* ============================== 06 DETALHE ============================== */
+#detalhe{position:relative;overflow:hidden}
+.det-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start;position:relative;z-index:2}
+.det-grid figure img{width:100%;border-radius:var(--r-lg)}
+.det-grid figcaption{margin-top:10px;color:var(--ink-600)}
+.det-1{grid-column:1/4;grid-row:1;margin-top:0}
+.det-2{grid-column:5/8;grid-row:1;margin-top:110px}
+.det-3{grid-column:8/11;grid-row:1;margin-top:18px}
+.det-4{grid-column:11/13;grid-row:1;margin-top:210px}
+.det-frase{grid-column:1/5;grid-row:2;margin-top:-40px;font-size:var(--fs-lead);
+  color:var(--ink-900);max-width:26ch;align-self:start;position:relative;z-index:3}
+#detalhe .pat-xadrez{top:4%;left:26%;width:46%;height:70%;z-index:0}
+#detalhe .barras-holder{position:absolute;right:var(--pad);bottom:10%;z-index:0}
+@media(max-width:1023px){
+  .det-1{grid-column:1/7;grid-row:1} .det-2{grid-column:7/13;grid-row:1;margin-top:70px}
+  .det-3{grid-column:1/7;grid-row:2;margin-top:24px} .det-4{grid-column:7/13;grid-row:2;margin-top:24px}
+  .det-frase{grid-column:1/-1;grid-row:3;margin-top:40px}
+}
+@media(max-width:767px){
+  .det-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .det-1{grid-column:1/3;grid-row:1} .det-2{grid-column:3/-1;grid-row:1}
+  .det-3{grid-column:1/3;grid-row:2} .det-4{grid-column:3/-1;grid-row:2}
+  .det-frase{grid-row:3;margin-top:36px}
+  .det-1 img,.det-3 img{height:240px;object-fit:cover}
+  .det-2 img,.det-4 img{height:180px;object-fit:cover}
+  .det-2{margin-top:40px} .det-3{margin-top:18px} .det-4{margin-top:18px}
+  #detalhe .barras-holder{right:var(--pad);bottom:4%}
+}
+
+/* ============================== 07 PROCESSO ============================== */
+#processo{position:relative}
+.vid-palco{position:relative;height:100dvh;min-height:520px;overflow:hidden;display:flex;align-items:center}
+.vid-palco .media{z-index:0}
+.etapas-bloco{background:var(--olive-600);color:var(--bone-100);padding-block:clamp(56px,7vw,100px);
+  border-radius:var(--r-lg);margin-top:-24px;position:relative;z-index:4}
+#orcamento{margin-top:var(--sec)}
+.etapas{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:var(--s7)}
+.etapa{background:var(--cream-50);color:var(--ink-900);border-radius:var(--r-md);padding:22px;
+  position:relative;min-height:200px}
+.etapa .en{position:absolute;top:16px;right:18px;font-family:var(--mono);font-size:var(--fs-label);
+  letter-spacing:.14em;color:var(--copper-700)}
+.etapa h3{font-size:15px;font-family:var(--sans);font-weight:600;text-transform:none;letter-spacing:0;
+  padding-right:34px;margin-bottom:8px}
+.etapa p{font-size:13px;line-height:1.5;color:var(--ink-600)}
+.etapas-bloco .h2{color:var(--bone-100)}
+.etapas-bloco .lead{color:var(--bone-100);opacity:.92;margin-top:var(--s4)}
+.etapas-cta{margin-top:var(--s7)}
+@media(max-width:1023px){ .etapas{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:767px){
+  .etapas{grid-template-columns:1fr;gap:10px}
+  .etapa{min-height:0;padding:18px;border-radius:12px}
+  .etapas-cta .btn{width:100%}
+}
+
+/* ============================== 08 ORÇAMENTO ============================== */
+#orcamento .sim-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);
+  gap:clamp(28px,4vw,64px);align-items:start;margin-top:var(--s7)}
+fieldset{border:0;padding:0;margin:0 0 var(--s7)}
+legend{font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--copper-700);padding:0;margin-bottom:12px}
+.help{color:var(--ink-600);font-size:13px;margin-bottom:14px}
+.cond{color:var(--ink-600);font-size:13px;margin-top:12px;padding-left:12px;border-left:2px solid var(--copper-700)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip label{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;
+  border-radius:var(--r-pill);border:1px solid var(--line-light);background:var(--cream-50);
+  cursor:pointer;font-size:14px;
+  transition:border-color .18s var(--ease-out),background-color .18s var(--ease-out)}
+.chip .ic{width:14px;height:14px;fill:var(--copper-700);opacity:0;transition:opacity .18s var(--ease-out);flex:none}
+.chip input:checked+label{border-color:var(--copper-700);background:var(--cream-200);font-weight:600}
+.chip input:checked+label .ic{opacity:1}
+.chip input:focus-visible+label{outline:2px solid var(--focus);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){ .chip label:hover{border-color:var(--ink-900)} }
+.med-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.med{background:var(--cream-50);border:1px solid var(--line-light);border-radius:var(--r-md);padding:18px}
+.med h4{font-size:14px;font-weight:600;margin-bottom:12px}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:13px;color:var(--ink-600);margin-bottom:6px}
+.inp{width:100%;min-height:48px;padding:0 14px;border-radius:var(--r-md);
+  border:1px solid var(--cream-300);background:var(--cream-50);color:var(--ink-900)}
+textarea.inp{padding:12px 14px;min-height:96px;resize:vertical;line-height:1.5}
+.inp::placeholder{color:var(--ink-600);opacity:.85}
+.inp:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-color:var(--copper-700)}
+.inp[aria-invalid="true"]{border-color:var(--error)}
+.nk{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-600);
+  min-height:44px;cursor:pointer}
+.err{display:flex;align-items:center;gap:6px;color:var(--error);font-size:13px;margin-top:6px}
+.err[hidden],[hidden]{display:none !important}
+.err .ic{width:15px;height:15px;fill:currentColor;flex:none}
+.ficha{position:sticky;top:calc(var(--navh) + 24px);background:var(--cream-50);
+  border:1px solid var(--line-light);border-radius:var(--r-lg);padding:26px;box-shadow:var(--shadow-card)}
+.ficha h3{margin-bottom:16px}
+.ficha dl{display:flex;flex-direction:column;gap:12px}
+.ficha dl>div{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:baseline}
+.ficha dd{overflow-wrap:anywhere}
+.ficha dt{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-600)}
+.ficha dd{font-size:14px}
+.ficha dd.empty{color:var(--ink-600);opacity:.75}
+.ficha dd.flash{animation:flash .4s var(--ease-out)}
+@keyframes flash{from{background:color-mix(in srgb,var(--copper-500) 34%,transparent)}to{background:transparent}}
+.fx-amb li{font-size:14px}
+.ficha .fnote{color:var(--ink-600);font-size:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line-light)}
+#sim-send{width:100%}
+.sim-micro{color:var(--ink-600);font-size:12px;margin-top:12px}
+.from-mat{font-family:var(--sans);font-size:11px;letter-spacing:0;text-transform:none;color:var(--ink-600)}
+@media(max-width:1023px){ #orcamento .sim-grid{grid-template-columns:1fr} .ficha{position:static} }
+@media(max-width:767px){
+  .ficha dl>div{grid-template-columns:1fr;gap:2px}
+  .ficha.armed #sim-send{position:sticky;bottom:calc(10px + env(safe-area-inset-bottom));z-index:6;
+    box-shadow:0 14px 34px -14px rgba(20,14,8,.5)}
+}
+@media(max-width:767px){ .med-list{grid-template-columns:1fr} }
+
+/* ============================== 09 EMPRESA ============================== */
+.emp-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(28px,4vw,64px);align-items:start}
+.emp-body p{margin-top:var(--s4);color:var(--ink-600);max-width:56ch}
+.emp-body .h2{color:var(--ink-900)}
+.compromissos{margin-top:var(--s6)}
+.compromissos li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line-light);font-size:var(--fs-small)}
+.compromissos li:last-child{border-bottom:1px solid var(--line-light)}
+.compromissos li::before{content:"";width:18px;height:1px;background:var(--copper-700);margin-top:11px;flex:none}
+.assinatura{font-family:var(--script);font-size:clamp(30px,3.4vw,46px);line-height:1.1;
+  color:var(--copper-700);margin-top:var(--s6)}
+.emp-fig{position:relative}
+.emp-fig img{width:100%;border-radius:var(--r-lg);position:relative;z-index:2}
+.emp-fig .pat-reguas{inset:-6% 0;width:100%;height:112%;z-index:0}
+@media(max-width:1023px){ .emp-grid{grid-template-columns:1fr} }
+
+/* ============================== 10 DÚVIDAS ============================== */
+.faq{margin-top:var(--s7);max-width:900px}
+.faq details{border-top:1px solid var(--line-light)}
+.faq details:last-child{border-bottom:1px solid var(--line-light)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;
+  min-height:72px;padding:14px 0;font-size:17px;font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:16px;height:16px;margin-left:auto;flex:none;
+  background:
+    linear-gradient(var(--copper-700),var(--copper-700)) center/16px 1.5px no-repeat,
+    linear-gradient(var(--copper-700),var(--copper-700)) center/1.5px 16px no-repeat;
+  transition:transform .22s var(--ease-out)}
+.faq details.is-open summary::after{transform:rotate(45deg)}
+.faq .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .22s var(--ease-out)}
+.faq details.is-open .ans{grid-template-rows:1fr}
+.faq .ans>div{overflow:hidden}
+.faq .ans p{color:var(--ink-600);font-size:var(--fs-small);max-width:62ch;padding-bottom:22px}
+@media(max-width:767px){ .faq summary{min-height:64px;font-size:16px} }
+
+/* ============================== 11 CTA ============================== */
+#cta{position:relative;z-index:2}
+.cta-in{position:relative;overflow:hidden;border-radius:var(--r-lg);
+  min-height:clamp(440px,64vh,620px);display:flex;align-items:center;
+  padding:clamp(40px,6vw,80px)}
+.cta-in .media{z-index:0}
+.cta-tx{position:relative;z-index:3;max-width:760px}
+.cta-tx h2{color:var(--bone-100);text-shadow:0 2px 16px rgba(20,14,8,.5)}
+.cta-tx .sub{color:var(--bone-100);margin-top:var(--s5);max-width:46ch;
+  text-shadow:0 1px 10px rgba(20,14,8,.6)}
+.cta-tx .btn{margin-top:var(--s6)}
+.cta-tx .micro{color:var(--bone-400);margin-top:var(--s4);font-size:var(--fs-small)}
+@media(max-width:767px){
+  .cta-tx .btn{width:100%}
+  .cta-in .scrim-l{background:color-mix(in srgb, var(--walnut-950) 54%, transparent)}
+}
+
+/* ============================== 12 RODAPÉ ============================== */
+footer{background:var(--walnut-800);color:var(--bone-100);padding-top:clamp(72px,8vw,120px);
+  margin-top:-28px;position:relative;z-index:1;overflow:hidden}
+.ft-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:var(--s7)}
+.ft h4{font-family:var(--mono);font-size:var(--fs-label);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--copper-500);margin-bottom:16px}
+.ft p,.ft li{color:var(--bone-400);font-size:var(--fs-small);line-height:1.8}
+.ft a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s var(--ease-out),color .2s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){ .ft a:hover{color:var(--bone-100);border-bottom-color:var(--copper-300)} }
+.ft-brand .lockup{height:40px;margin-bottom:16px}
+.ft-brand .lockup .w,.ft-brand .lockup .s{fill:var(--bone-100)}
+.ft-brand .lockup .mono{fill:var(--copper-500)}
+.ft-assin{font-family:var(--script);font-size:26px;color:var(--copper-300);margin-top:10px}
+.ft-nota{margin-top:var(--s8);padding-top:var(--s5);border-top:1px solid var(--line-dark);
+  color:var(--bone-400);font-size:12.5px;line-height:1.7;max-width:78ch}
+.ft-fim{color:var(--bone-400);font-size:12.5px;margin-top:var(--s4)}
+/* a caixa tem que ter a proporcao do proprio viewBox, senao a palavra sai cortada no meio */
+.wm-giant{margin-top:clamp(40px,6vw,80px);width:100%;overflow:hidden;aspect-ratio:329/38}
+.wm-giant svg{width:100%;height:auto;display:block}
+.wm-giant svg .w{fill:var(--bone-100);opacity:.22}
+@media(max-width:1023px){ .ft-grid{grid-template-columns:1fr 1fr} .ft-brand{grid-column:1/-1} }
+/* alvos de toque: qualquer tela sem mouse fino ou ate 1024 recebe 44px de altura */
+@media(max-width:1023px),(hover:none),(pointer:coarse){
+  .ft li a{display:inline-flex;align-items:center;min-height:44px;padding:4px 0}
+  .ft li{line-height:1.3}
+  .hero-links a,.lnk,.mais,.g-cta,a.txt-link{min-height:44px;display:inline-flex;align-items:center}
+  .nav-links a{min-height:44px;display:inline-flex;align-items:center;padding:0}
+}
+@media(max-width:767px){
+  .ft-grid{grid-template-columns:1fr;gap:var(--s6)}
+  .ft li a{display:inline-block;padding:13px 0}
+  .ft li{line-height:1.3}
+  .wm-giant{margin-bottom:24px}
+}
+
+/* ============================== FAB ============================== */
+#wa-fab{position:fixed;right:20px;bottom:20px;z-index:55;display:inline-flex;align-items:center;
+  gap:10px;min-height:56px;padding:0 22px 0 18px;border-radius:var(--r-pill);background:var(--wa);
+  color:#fff;text-decoration:none;font-weight:600;font-size:14.5px;
+  box-shadow:0 14px 34px -14px rgba(20,14,8,.55);
+  opacity:0;transform:translateY(14px);pointer-events:none;
+  transition:opacity .26s var(--ease-out),transform .26s var(--ease-out)}
+#wa-fab.show{opacity:1;transform:translateY(0);pointer-events:auto}
+#wa-fab svg{width:22px;height:22px;fill:currentColor;flex:none}
+@media(max-width:767px){
+  #wa-fab{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));justify-content:center;
+    padding:0 18px}
+}
+
+/* ============================== REDUCED MOTION ============================== */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.12s !important}
+  /* sem marquee: uma palavra so, centrada e dimensionada para caber */
+  .faixa__track{justify-content:center;width:100%;padding-inline:var(--pad);gap:clamp(12px,2vw,28px)}
+  .faixa__track>*:nth-child(n+3){display:none}
+  .faixa__track span{font-size:min(var(--fs-faixa),12vw)}
+  .faixa__ie{height:calc(min(var(--fs-faixa),12vw) * .62)}
+  #hero{height:auto;min-height:0}
+  #hero .hero-in{position:relative;inset:auto;min-height:74vh}
+  .vid-palco,.painel{height:auto;min-height:70vh}
+  .palco-prj,.palco-mat{min-height:0}
+  .gal-track{display:block;height:auto}
+  .painel{width:100%;padding-block:0 32px}
+}
+.rm .faixa__track{justify-content:center;width:100%;padding-inline:var(--pad);gap:clamp(12px,2vw,28px)}
+.rm .faixa__track>*:nth-child(n+3){display:none}
+.rm .faixa__track span{font-size:min(var(--fs-faixa),12vw)}
+.rm .faixa__ie{height:calc(min(var(--fs-faixa),12vw) * .62)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="wm-word" d="M6.67 0V-36.4H30.5V-34.81H8.41V-1.59H31.28V0ZM8.12 -17.7V-19.27H28.18V-17.7ZM64.72 0.2Q60.73 0.2 57.17 -1.22Q53.61 -2.65 51.73 -4.85L52.66 -6.1Q54.43 -4.11 57.68 -2.74Q60.93 -1.37 64.67 -1.37Q68.49 -1.37 70.92 -2.4Q73.34 -3.44 74.52 -5.18Q75.69 -6.93 75.69 -9.06Q75.69 -11.54 74.45 -13.05Q73.21 -14.56 71.15 -15.43Q69.09 -16.3 66.67 -16.89Q64.24 -17.48 61.78 -18.11Q59.33 -18.75 57.28 -19.78Q55.22 -20.81 53.98 -22.58Q52.74 -24.36 52.74 -27.23Q52.74 -29.7 54.05 -31.83Q55.36 -33.96 58.11 -35.28Q60.86 -36.6 65.21 -36.6Q68.17 -36.6 71.05 -35.7Q73.94 -34.8 75.96 -33.29L75.2 -31.89Q72.98 -33.49 70.34 -34.26Q67.69 -35.03 65.25 -35.03Q61.58 -35.03 59.18 -33.97Q56.77 -32.9 55.62 -31.15Q54.48 -29.4 54.48 -27.22Q54.48 -24.7 55.72 -23.19Q56.96 -21.68 59.01 -20.81Q61.07 -19.94 63.52 -19.35Q65.97 -18.76 68.4 -18.11Q70.83 -17.45 72.89 -16.43Q74.95 -15.4 76.19 -13.67Q77.43 -11.93 77.43 -9.12Q77.43 -6.66 76.09 -4.53Q74.75 -2.4 71.93 -1.1Q69.11 0.2 64.72 0.2ZM110.25 0.2Q106.26 0.2 102.7 -1.22Q99.14 -2.65 97.26 -4.85L98.19 -6.1Q99.97 -4.11 103.21 -2.74Q106.46 -1.37 110.2 -1.37Q114.02 -1.37 116.45 -2.4Q118.88 -3.44 120.05 -5.18Q121.22 -6.93 121.22 -9.06Q121.22 -11.54 119.98 -13.05Q118.74 -14.56 116.69 -15.43Q114.63 -16.3 112.2 -16.89Q109.77 -17.48 107.32 -18.11Q104.87 -18.75 102.81 -19.78Q100.75 -20.81 99.51 -22.58Q98.27 -24.36 98.27 -27.23Q98.27 -29.7 99.58 -31.83Q100.89 -33.96 103.64 -35.28Q106.39 -36.6 110.75 -36.6Q113.7 -36.6 116.59 -35.7Q119.47 -34.8 121.5 -33.29L120.73 -31.89Q118.52 -33.49 115.87 -34.26Q113.23 -35.03 110.78 -35.03Q107.12 -35.03 104.71 -33.97Q102.3 -32.9 101.16 -31.15Q100.01 -29.4 100.01 -27.22Q100.01 -24.7 101.25 -23.19Q102.49 -21.68 104.55 -20.81Q106.61 -19.94 109.06 -19.35Q111.51 -18.76 113.94 -18.11Q116.37 -17.45 118.42 -16.43Q120.48 -15.4 121.72 -13.67Q122.96 -11.93 122.96 -9.12Q122.96 -6.66 121.62 -4.53Q120.29 -2.4 117.47 -1.1Q114.65 0.2 110.25 0.2ZM146.6 0V-36.4H170.43V-34.81H148.34V-1.59H171.21V0ZM148.05 -17.7V-19.27H168.11V-17.7ZM195.46 0V-36.4H196.92L223.62 -2.1H222.77V-36.4H224.52V0H223.06L196.36 -34.3H197.21V0ZM247.84 0V-1.25L274.31 -35.45L274.45 -34.81H248.11V-36.4H276.2V-35.15L249.74 -0.95L249.59 -1.59H276.75V0ZM293.19 0 310.02 -36.4H311.76L328.6 0H326.67L310.49 -35.21H311.28L295.1 0ZM299 -10.65 299.68 -12.19H321.93L322.61 -10.65Z"/>
+    <path id="wm-sub" d="M1.94 0V-11.9H6.39Q7.91 -11.9 8.99 -11.41Q10.08 -10.93 10.67 -10.02Q11.25 -9.11 11.25 -7.83Q11.25 -6.56 10.67 -5.65Q10.08 -4.74 8.99 -4.25Q7.91 -3.76 6.39 -3.76H2.63L3.19 -4.35V0ZM3.19 -4.25 2.63 -4.86H6.36Q8.15 -4.86 9.07 -5.64Q10 -6.42 10 -7.83Q10 -9.25 9.07 -10.03Q8.15 -10.81 6.36 -10.81H2.63L3.19 -11.41ZM19.37 0V-11.9H23.82Q26.09 -11.9 27.39 -10.82Q28.68 -9.75 28.68 -7.83Q28.68 -6.56 28.1 -5.65Q27.51 -4.75 26.43 -4.26Q25.34 -3.77 23.82 -3.77H20.06L20.62 -4.35V0ZM27.5 0 24.43 -4.32H25.8L28.87 0ZM20.62 -4.25 20.06 -4.85H23.79Q25.58 -4.85 26.5 -5.63Q27.43 -6.42 27.43 -7.83Q27.43 -9.25 26.5 -10.03Q25.58 -10.81 23.79 -10.81H20.06L20.62 -11.41ZM42.08 0.11Q40.74 0.11 39.59 -0.35Q38.45 -0.8 37.61 -1.62Q36.76 -2.44 36.29 -3.54Q35.82 -4.64 35.82 -5.95Q35.82 -7.26 36.29 -8.36Q36.76 -9.46 37.61 -10.28Q38.45 -11.1 39.59 -11.55Q40.73 -12.01 42.08 -12.01Q43.43 -12.01 44.57 -11.56Q45.71 -11.1 46.55 -10.29Q47.39 -9.47 47.86 -8.36Q48.33 -7.26 48.33 -5.95Q48.33 -4.64 47.86 -3.54Q47.39 -2.43 46.55 -1.61Q45.71 -0.8 44.57 -0.34Q43.43 0.11 42.08 0.11ZM42.08 -1.01Q43.15 -1.01 44.06 -1.38Q44.97 -1.75 45.65 -2.42Q46.32 -3.09 46.7 -3.99Q47.07 -4.89 47.07 -5.95Q47.07 -7.02 46.7 -7.91Q46.32 -8.81 45.65 -9.48Q44.97 -10.15 44.06 -10.52Q43.15 -10.89 42.08 -10.89Q41.01 -10.89 40.1 -10.52Q39.19 -10.15 38.51 -9.48Q37.83 -8.8 37.45 -7.91Q37.08 -7.02 37.08 -5.95Q37.08 -4.89 37.45 -3.99Q37.83 -3.1 38.51 -2.42Q39.18 -1.75 40.1 -1.38Q41.01 -1.01 42.08 -1.01ZM57.65 0.11Q56.65 0.11 55.77 -0.34Q54.9 -0.78 54.36 -1.59L55.1 -2.44Q55.59 -1.73 56.24 -1.36Q56.88 -0.98 57.66 -0.98Q59.87 -0.98 59.87 -3.61V-10.81H55.52V-11.9H61.12V-3.65Q61.12 -1.77 60.24 -0.83Q59.37 0.11 57.65 0.11ZM70.12 0V-11.9H78.28V-10.81H71.36V-1.09H78.52V0ZM71.24 -5.51V-6.58H77.53V-5.51ZM89.03 0V-10.81H84.84V-11.9H94.46V-10.81H90.28V0ZM106.89 0.11Q105.55 0.11 104.4 -0.35Q103.26 -0.8 102.41 -1.62Q101.57 -2.44 101.1 -3.54Q100.63 -4.64 100.63 -5.95Q100.63 -7.26 101.1 -8.36Q101.57 -9.46 102.42 -10.28Q103.26 -11.1 104.4 -11.55Q105.54 -12.01 106.89 -12.01Q108.24 -12.01 109.38 -11.56Q110.52 -11.1 111.36 -10.29Q112.2 -9.47 112.67 -8.36Q113.14 -7.26 113.14 -5.95Q113.14 -4.64 112.67 -3.54Q112.2 -2.43 111.36 -1.61Q110.52 -0.8 109.38 -0.34Q108.24 0.11 106.89 0.11ZM106.89 -1.01Q107.96 -1.01 108.87 -1.38Q109.78 -1.75 110.46 -2.42Q111.13 -3.09 111.51 -3.99Q111.88 -4.89 111.88 -5.95Q111.88 -7.02 111.51 -7.91Q111.13 -8.81 110.46 -9.48Q109.78 -10.15 108.87 -10.52Q107.96 -10.89 106.89 -10.89Q105.82 -10.89 104.91 -10.52Q103.99 -10.15 103.32 -9.48Q102.64 -8.8 102.26 -7.91Q101.89 -7.02 101.89 -5.95Q101.89 -4.89 102.26 -3.99Q102.64 -3.1 103.32 -2.42Q103.99 -1.75 104.91 -1.38Q105.82 -1.01 106.89 -1.01ZM139.38 0.18 132.81 -6.57Q132.21 -7.18 131.87 -7.66Q131.53 -8.13 131.39 -8.56Q131.25 -8.98 131.25 -9.44Q131.25 -10.21 131.62 -10.78Q131.99 -11.35 132.67 -11.67Q133.35 -11.99 134.25 -11.99Q135.1 -11.99 135.72 -11.71Q136.34 -11.42 136.68 -10.89Q137.03 -10.36 137.03 -9.62Q137.03 -8.97 136.71 -8.42Q136.4 -7.86 135.68 -7.32Q134.97 -6.78 133.76 -6.13Q132.67 -5.53 132.06 -5.04Q131.44 -4.55 131.19 -4.07Q130.94 -3.6 130.94 -3.04Q130.94 -2.4 131.3 -1.92Q131.66 -1.43 132.31 -1.17Q132.96 -0.9 133.82 -0.9Q135.01 -0.9 135.95 -1.4Q136.88 -1.89 137.52 -2.9Q138.15 -3.9 138.44 -5.41L139.42 -5.1Q139.09 -3.4 138.3 -2.24Q137.52 -1.08 136.37 -0.49Q135.21 0.11 133.76 0.11Q132.6 0.11 131.69 -0.28Q130.79 -0.66 130.27 -1.34Q129.75 -2.02 129.75 -2.92Q129.75 -3.68 130.09 -4.32Q130.43 -4.96 131.19 -5.58Q131.95 -6.2 133.2 -6.88Q134.27 -7.48 134.88 -7.91Q135.49 -8.35 135.74 -8.74Q135.99 -9.14 135.99 -9.6Q135.99 -10.27 135.54 -10.67Q135.09 -11.08 134.25 -11.08Q133.36 -11.08 132.87 -10.63Q132.37 -10.18 132.37 -9.46Q132.37 -9.11 132.49 -8.79Q132.6 -8.47 132.91 -8.07Q133.22 -7.68 133.78 -7.09L140.08 -0.62ZM157.14 0V-11.9H158.17L163.61 -2.61H163.06L168.46 -11.9H169.49L169.5 0H168.29L168.28 -10.01H168.58L163.61 -1.52H163.02L158.01 -10.01H158.35V0ZM176.7 0 182.13 -11.9H183.37L188.82 0H187.49L182.49 -11.18H183.01L178 0ZM178.83 -3.17 179.21 -4.2H186.13L186.51 -3.17ZM196.02 0V-11.9H200.86Q202.76 -11.9 204.2 -11.14Q205.63 -10.38 206.44 -9.04Q207.24 -7.71 207.24 -5.95Q207.24 -4.19 206.44 -2.86Q205.63 -1.52 204.2 -0.76Q202.76 0 200.86 0ZM197.26 -1.09H200.78Q202.37 -1.09 203.54 -1.71Q204.7 -2.33 205.34 -3.43Q205.98 -4.52 205.98 -5.95Q205.98 -7.39 205.34 -8.48Q204.7 -9.57 203.54 -10.19Q202.37 -10.81 200.78 -10.81H197.26ZM215.28 0V-11.9H223.44V-10.81H216.53V-1.09H223.69V0ZM216.4 -5.51V-6.58H222.69V-5.51ZM231.88 0V-11.9H233.13V0ZM242.24 0V-11.9H246.68Q248.95 -11.9 250.25 -10.82Q251.55 -9.75 251.55 -7.83Q251.55 -6.56 250.96 -5.65Q250.38 -4.75 249.29 -4.26Q248.2 -3.77 246.68 -3.77H242.93L243.48 -4.35V0ZM250.36 0 247.3 -4.32H248.67L251.74 0ZM243.48 -4.25 242.93 -4.85H246.66Q248.44 -4.85 249.37 -5.63Q250.29 -6.42 250.29 -7.83Q250.29 -9.25 249.37 -10.03Q248.44 -10.81 246.66 -10.81H242.93L243.48 -11.41ZM257.85 0 263.29 -11.9H264.52L269.97 0H268.65L263.64 -11.18H264.16L259.15 0ZM259.99 -3.17 260.36 -4.2H267.28L267.66 -3.17Z"/>
+    <path id="ie-I" d="M0 138.5 L32 120 L32 396 L0 414.5 Z"/>
+    <path id="ie-E" d="M64 99.4 L236 0 L236 44 L96 124.8 L96 199 L236 118.2 L236 158.2 L96 239 L96 370 L236 289.2 L236 333.2 L64 432.5 Z"/>
+    <symbol id="i-wa" viewBox="0 0 256 256"><path d="M186.68,146.63l-32-16a6,6,0,0,0-6,.38L133,141.46A42.49,42.49,0,0,1,114.54,123L125,107.33a6,6,0,0,0,.38-6l-16-32A6,6,0,0,0,104,66a38,38,0,0,0-38,38,86.1,86.1,0,0,0,86,86,38,38,0,0,0,38-38A6,6,0,0,0,186.68,146.63ZM152,178a74.09,74.09,0,0,1-74-74,26,26,0,0,1,22.42-25.75l12.66,25.32-10.39,15.58a6,6,0,0,0-.54,5.63,54.43,54.43,0,0,0,29.07,29.07,6,6,0,0,0,5.63-.54l15.58-10.39,25.32,12.66A26,26,0,0,1,152,178ZM128,26A102,102,0,0,0,38.35,176.69L26.73,211.56a14,14,0,0,0,17.71,17.71l34.87-11.62A102,102,0,1,0,128,26Zm0,192a90,90,0,0,1-45.06-12.08,6.09,6.09,0,0,0-3-.81,6.2,6.2,0,0,0-1.9.31L40.65,217.88a2,2,0,0,1-2.53-2.53L50.58,178a6,6,0,0,0-.5-4.91A90,90,0,1,1,128,218Z"/></symbol>
+    <symbol id="i-wa-fill" viewBox="0 0 256 256"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 256 256"><path d="M220.24,132.24l-72,72a6,6,0,0,1-8.48-8.48L201.51,134H40a6,6,0,0,1,0-12H201.51L139.76,60.24a6,6,0,0,1,8.48-8.48l72,72A6,6,0,0,1,220.24,132.24Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 256 256"><path d="M228.24,76.24l-128,128a6,6,0,0,1-8.48,0l-56-56a6,6,0,0,1,8.48-8.48L96,191.51,219.76,67.76a6,6,0,0,1,8.48,8.48Z"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm-6-82V80a6,6,0,0,1,12,0v56a6,6,0,0,1-12,0Zm16,36a10,10,0,1,1-10-10A10,10,0,0,1,138,172Z"/></symbol>
+  </defs>
+</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="mat-defs"></defs></svg>
+
+<header id="nav">
+  <div class="nav-in">
+    <a href="#hero" class="nav-brand" aria-label="Essenza Projeto e Madeira, início">
+      <svg class="lockup" viewBox="0 0 300 64" aria-hidden="true">
+        <g class="mono" transform="scale(.1478)"><use href="#ie-I"/><use href="#ie-E"/></g>
+        <use class="w" href="#wm-word" transform="translate(56 36) scale(.7417)"/>
+        <use class="s" href="#wm-sub" transform="translate(58 58) scale(.7407)"/>
+      </svg>
+    </a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#galeria">Ambientes</a>
+      <a href="#projeto">Projeto</a>
+      <a href="#materiais">Materiais</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <div class="nav-cta"><a class="btn btn-cu wa" data-wa="default" href="#" target="_blank" rel="noopener">Pedir orçamento</a></div>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mob">Menu<i aria-hidden="true"></i></button>
+  </div>
+</header>
+
+<div id="mob" role="dialog" aria-modal="true" aria-label="Menu" inert>
+  <button class="mclose" id="mclose" type="button">Fechar</button>
+  <nav class="mlinks" aria-label="Seções">
+    <a href="#galeria">Ambientes</a>
+    <a href="#projeto">Projeto</a>
+    <a href="#materiais">Materiais</a>
+    <a href="#orcamento">Orçamento</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+  <a class="btn btn-wa btn-lg wa" data-wa="default" href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+</div>
+
+<main>
+
+<!-- ===================== CAP 00 · HERO ===================== -->
+<section id="hero" aria-label="Essenza, móveis planejados sob medida">
+  <div class="media" id="hero-media">
+    <picture>
+      <source media="(max-width:767px)" srcset="assets/ed/hero-v.jpg" width="900" height="1601">
+      <img src="assets/ed/hero.jpg" width="1700" height="956" fetchpriority="high" decoding="async"
+           alt="Closet planejado em nogueira, com portas do piso ao teto, ilha central e iluminação em LED">
+    </picture>
+  </div>
+  <div class="scrim-b" id="hero-scrim" aria-hidden="true"></div>
+  <div class="scrim-l" aria-hidden="true"></div>
+  <div class="scrim-t" aria-hidden="true"></div>
+  <div class="vinheta" aria-hidden="true"></div>
+  
+  <div class="hero-in">
+    <div class="hero-tx">
+      <h1 class="h1" id="hero-h1">
+        <span class="l"><span>Móveis planejados</span></span>
+        <span class="l"><span>feitos na medida</span></span>
+        <span class="l"><span>do seu espaço.</span></span>
+      </h1>
+      <p class="sub">A serra só liga depois do seu sim. O que você aprova em 3D é o que sobe na sua parede.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa btn-lg wa" data-wa="default" href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span class="ctaL">Pedir meu orçamento no WhatsApp</span></a>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <svg class="lockup" viewBox="0 0 300 64" aria-hidden="true">
+        <g class="mono" transform="scale(.1478)" fill="#C88F56"><use href="#ie-I"/><use href="#ie-E"/></g>
+        <use class="w" href="#wm-word" transform="translate(56 36) scale(.7417)"/>
+        <use class="s" href="#wm-sub" transform="translate(58 58) scale(.7407)"/>
+      </svg>
+      <p class="lbl">Móveis planejados e marcenaria sob medida</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 01 · ABERTURA ===================== -->
+<section id="abertura" class="cap" aria-label="A Essenza em uma frase">
+  <div class="pat pat-xadrez" id="pat-ab" aria-hidden="true"></div>
+  <div class="pat pat-reguas" aria-hidden="true"></div>
+  <div class="wrap-w">
+    <div class="ab-grid">
+      <p class="ab-lead lead" id="ab-lead">
+        <span class="l"><span>Na Essenza, cada ambiente é pensado como único.</span></span>
+        <span class="l"><span>A gente cria móveis planejados e projetos sob medida</span></span>
+        <span class="l"><span>que juntam funcionalidade, bom acabamento e o estilo</span></span>
+        <span class="l"><span>de quem vai morar ali.</span></span>
+      </p>
+      <figure class="fig-a" data-px="-48">
+        <img src="assets/ed/ab-grande.jpg" data-srcm="assets/ed/ab-grande.jpg" width="973" height="1200"
+             alt="Cozinha planejada em madeira clara com armários do piso ao teto" loading="lazy" decoding="async">
+        <figcaption class="lbl">Cozinha planejada</figcaption>
+      </figure>
+      <div class="ab-right">
+      <figure class="fig-b" data-px="-90">
+        <img src="assets/ed/ab-macro.jpg" width="760" height="504"
+             alt="Plaina tirando cavaco de uma peça de madeira" loading="lazy" decoding="async">
+        <figcaption class="lbl">Veio da madeira</figcaption>
+      </figure>
+      <figure class="fig-c" data-px="-28">
+        <img src="assets/ed/ab-foto.jpg" width="900" height="506"
+             alt="Sala de jantar com prateleiras de madeira na parede" loading="lazy" decoding="async">
+        <figcaption class="lbl">Ambiente integrado</figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 02 · AMBIENTES ===================== -->
+<section id="ambientes" aria-labelledby="h-ambientes">
+  <div class="faixa bg-taupe" data-cap="ambientes" data-dir="-1">
+    <div class="faixa__track" aria-hidden="true">
+      <span>Ambientes</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Ambientes</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Ambientes</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Ambientes</span>
+    </div>
+    <h2 class="sr" id="h-ambientes">Ambientes</h2>
+  </div>
+  <div class="nums-wrap">
+    <div class="media" id="nums-media">
+      <img src="assets/ed/estar.jpg" data-srcm="assets/ed/estar@m.jpg" width="1600" height="1600"
+           alt="Sala de estar com marcenaria em madeira e janelas altas" loading="lazy" decoding="async">
+    </div>
+    <div class="scrim-f" aria-hidden="true"></div>
+    <div class="wrap-w">
+      <ul class="nums-grid" id="nums-grid">
+        <li class="ncard"><span class="num">8</span><span class="lbl">Tipos de ambiente</span><p>Da cozinha ao móvel corporativo, tudo desenhado para a sua parede.</p></li>
+        <li class="ncard"><span class="num">5</span><span class="lbl">Etapas até a entrega</span><p>Conversa, medição, projeto 3D, produção e montagem.</p></li>
+        <li class="ncard"><span class="num">1</span><span class="lbl">Equipe do projeto à montagem</span><p>Quem mede é quem projeta e acompanha a instalação.</p></li>
+        <li class="ncard"><span class="num">3D</span><span class="lbl">Projeto antes da produção</span><p>Nenhuma chapa é cortada antes de você aprovar.</p></li>
+        <li class="ncard"><span class="num">0</span><span class="lbl">Móvel de catálogo</span><p>Cada peça é desenhada para o espaço que você tem.</p></li>
+        <!-- PENDENTE: sexto card (anos de mercado ou ambientes entregues) quando o cliente confirmar o dado -->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 03 · GALERIA ===================== -->
+<section id="galeria" aria-labelledby="h-galeria">
+  <h2 class="sr" id="h-galeria">Ambientes que a Essenza projeta</h2>
+
+  <div class="gal-desk" id="gal-desk">
+    <div class="gal-track" id="gal-track">
+      <article class="painel">
+        <div class="media"><img src="assets/ed/g-cozinha.jpg" data-srcm="assets/ed/g-cozinha@m.jpg" width="1000" height="1500" alt="Cozinha planejada em tom creme com armários até o teto" loading="lazy" decoding="async"></div>
+        <div class="scrim-b" aria-hidden="true"></div>
+        <div class="gcard">
+          <h3 class="h3">Cozinhas<br>planejadas</h3>
+          <span class="gmeta">1 / 6</span>
+          <p>Armários do piso ao teto, espaço certo para forno, cooktop e geladeira, e gaveta onde a panela realmente fica.</p>
+          <div class="gnav">
+            <button type="button" class="g-prev" aria-label="Ambiente anterior"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="g-next" aria-label="Próximo ambiente"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </article>
+      <article class="painel">
+        <div class="media"><img src="assets/ed/g-closet.jpg" data-srcm="assets/ed/g-closet@m.jpg" width="1700" height="1160" alt="Closet com ilha central, gavetas e iluminação em LED" loading="lazy" decoding="async"></div>
+        <div class="scrim-b" aria-hidden="true"></div>
+        <div class="gcard">
+          <h3 class="h3">Quartos<br>e closets</h3>
+          <span class="gmeta">2 / 6</span>
+          <p>Guarda-roupa com cabideiro, gaveteiro e maleiro divididos pelo que você guarda, não por um modelo de catálogo.</p>
+          <div class="gnav">
+            <button type="button" class="g-prev" aria-label="Ambiente anterior"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="g-next" aria-label="Próximo ambiente"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </article>
+      <article class="painel">
+        <div class="media"><img src="assets/ed/g-sala.jpg" data-srcm="assets/ed/g-sala@m.jpg" width="1700" height="956" alt="Sala com painel ripado de madeira e rack suspenso" loading="lazy" decoding="async"></div>
+        <div class="scrim-b" aria-hidden="true"></div>
+        <div class="gcard">
+          <h3 class="h3">Salas<br>e painéis</h3>
+          <span class="gmeta">3 / 6</span>
+          <p>Painel de TV com a fiação escondida, rack na altura do sofá e nichos para o que fica à mostra.</p>
+          <div class="gnav">
+            <button type="button" class="g-prev" aria-label="Ambiente anterior"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="g-next" aria-label="Próximo ambiente"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </article>
+      <article class="painel">
+        <div class="media"><img src="assets/ed/g-office.jpg" data-srcm="assets/ed/g-office@m.jpg" width="996" height="1500" alt="Home office com bancada, nichos e iluminação em LED" loading="lazy" decoding="async"></div>
+        <div class="scrim-b" aria-hidden="true"></div>
+        <div class="gcard">
+          <h3 class="h3">Home<br>office</h3>
+          <span class="gmeta">4 / 6</span>
+          <p>Bancada na altura certa para trabalhar oito horas, prateleiras acima da tela e gaveta para o que não pode ficar à vista.</p>
+          <div class="gnav">
+            <button type="button" class="g-prev" aria-label="Ambiente anterior"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="g-next" aria-label="Próximo ambiente"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </article>
+      <article class="painel">
+        <div class="media"><img src="assets/ed/g-banheiro.jpg" data-srcm="assets/ed/g-banheiro@m.jpg" width="1389" height="1500" alt="Banheiro com gabinete de madeira sob a cuba e espelheira" loading="lazy" decoding="async"></div>
+        <div class="scrim-b" aria-hidden="true"></div>
+        <div class="gcard">
+          <h3 class="h3">Banheiros</h3>
+          <span class="gmeta">5 / 6</span>
+          <p>Gabinete sob a cuba e armário com espelho, em material pensado para ambiente úmido.</p>
+          <div class="gnav">
+            <button type="button" class="g-prev" aria-label="Ambiente anterior"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="g-next" aria-label="Próximo ambiente"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </article>
+      <article class="painel">
+        <div class="media"><img src="assets/ed/g-sobmedida.jpg" data-srcm="assets/ed/g-sobmedida@m.jpg" width="1600" height="1600" alt="Aparador de madeira feito sob medida para a parede da sala" loading="lazy" decoding="async"></div>
+        <div class="scrim-b" aria-hidden="true"></div>
+        <div class="gcard">
+          <h3 class="h3">Móveis<br>sob medida</h3>
+          <span class="gmeta">6 / 6</span>
+          <p>Aquele canto embaixo da escada, a parede torta, o vão de 37 cm. Peça única para o espaço que nenhuma loja atende.</p>
+          <div class="gnav">
+            <button type="button" class="g-prev" aria-label="Ambiente anterior"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="g-next" aria-label="Próximo ambiente"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="gal-mob cap" id="gal-mob">
+    <div class="gal-scroll" id="gal-scroll" data-native-scroll>
+      <article class="gitem"><div class="gimg"><img src="assets/ed/g-cozinha@m.jpg" width="600" height="900" alt="Cozinha planejada em tom creme com armários até o teto" loading="lazy" decoding="async"></div><h3 class="h3">Cozinhas planejadas</h3><p>Armários do piso ao teto, espaço certo para forno, cooktop e geladeira, e gaveta onde a panela realmente fica.</p></article>
+      <article class="gitem"><div class="gimg"><img src="assets/ed/g-closet@m.jpg" width="900" height="614" alt="Closet com ilha central, gavetas e iluminação em LED" loading="lazy" decoding="async"></div><h3 class="h3">Quartos e closets</h3><p>Guarda-roupa com cabideiro, gaveteiro e maleiro divididos pelo que você guarda, não por um modelo de catálogo.</p></article>
+      <article class="gitem"><div class="gimg"><img src="assets/ed/g-sala@m.jpg" width="900" height="506" alt="Sala com painel ripado de madeira e rack suspenso" loading="lazy" decoding="async"></div><h3 class="h3">Salas e painéis</h3><p>Painel de TV com a fiação escondida, rack na altura do sofá e nichos para o que fica à mostra.</p></article>
+      <article class="gitem"><div class="gimg"><img src="assets/ed/g-office@m.jpg" width="598" height="900" alt="Home office com bancada, nichos e iluminação em LED" loading="lazy" decoding="async"></div><h3 class="h3">Home office</h3><p>Bancada na altura certa para trabalhar oito horas, prateleiras acima da tela e gaveta para o que não pode ficar à vista.</p></article>
+      <article class="gitem"><div class="gimg"><img src="assets/ed/g-banheiro@m.jpg" width="834" height="900" alt="Banheiro com gabinete de madeira sob a cuba e espelheira" loading="lazy" decoding="async"></div><h3 class="h3">Banheiros</h3><p>Gabinete sob a cuba e armário com espelho, em material pensado para ambiente úmido.</p></article>
+      <article class="gitem"><div class="gimg"><img src="assets/ed/g-sobmedida@m.jpg" width="900" height="900" alt="Aparador de madeira feito sob medida para a parede da sala" loading="lazy" decoding="async"></div><h3 class="h3">Móveis sob medida</h3><p>Aquele canto embaixo da escada, a parede torta, o vão de 37 cm. Peça única para o espaço que nenhuma loja atende.</p></article>
+    </div>
+    <div class="gbar" aria-hidden="true"><i id="gbar-fill"></i></div>
+    <p class="gcount lbl" id="gcount" aria-live="polite">1 / 6</p>
+  </div>
+
+  <div class="wrap" style="padding-top:var(--sec);padding-bottom:var(--sec)">
+    <a class="btn btn-gh btn-lg" href="#orcamento">Orçar meu ambiente</a>
+  </div>
+</section>
+
+<!-- ===================== CAP 04 · PROJETO ===================== -->
+<section id="projeto" aria-labelledby="h-projeto">
+  <div class="faixa on-media r-top" data-cap="projeto" data-dir="-1">
+    <div class="media"><img src="assets/ed/faixa-proj.jpg" data-srcm="assets/ed/faixa-proj@m.jpg" width="1700" height="956" alt="" loading="lazy" decoding="async"></div>
+    <div class="scrim-f" aria-hidden="true"></div>
+    <div class="faixa__track" aria-hidden="true">
+      <span>Projeto</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Projeto</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Projeto</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Projeto</span>
+    </div>
+    <h2 class="sr" id="h-projeto">O projeto, medida por medida</h2>
+  </div>
+
+  <div class="palco-prj" id="prj-palco">
+    <div class="wrap-w" style="width:100%">
+      <div class="prj-bar" aria-hidden="true"><i id="prj-bar-fill"></i></div>
+      <div class="prj-grid">
+        <div class="prj-left">
+          <ul class="prj-bullets">
+            <li><span>Medição parede por parede, com tomada, ponto de água e desnível.</span></li>
+            <li><span>Divisão interna de cada armário, pensada pelo que você guarda.</span></li>
+            <li><span>Cotas e altura de cada peça, fechadas antes da produção.</span></li>
+          </ul>
+          <ol class="steps" id="steps">
+            <span class="rail" aria-hidden="true"></span><span class="rail-fill" aria-hidden="true"></span>
+            <li class="step on"><h3>Conversa</h3><p>Você conta quais ambientes entram, como usa cada um e o que incomoda hoje.</p></li>
+            <li class="step"><h3>Medição no local</h3><p>Medimos parede por parede, com pontos de água, tomadas, janelas e desníveis.</p></li>
+            <li class="step"><h3>Projeto 3D e aprovação</h3><p>Você vê cores, acabamentos e a divisão interna de cada armário, e ajusta até aprovar.</p></li>
+            <li class="step"><h3>Produção na marcenaria</h3><p>As peças são cortadas e montadas a partir do projeto aprovado, nas medidas do seu imóvel.</p></li>
+            <li class="step"><h3>Montagem e entrega</h3><p>A equipe instala, confere portas, gavetas e nivelamento e entrega o ambiente limpo.</p></li>
+          </ol>
+        </div>
+        <div class="prj-mid">
+          <div class="pat pat-reguas" aria-hidden="true"></div>
+          <svg id="mv-build" viewBox="-120 -60 1040 820" role="img" aria-label="Desenho técnico de uma cozinha com cotas, que se monta enquanto a página rola"></svg>
+          <p class="prj-cota lbl">Planta do móvel · medidas da sua parede</p>
+        </div>
+        <div class="prj-right">
+          <div class="prj-opts" role="radiogroup" aria-label="Ambiente do desenho">
+            <button class="opt" type="button" role="radio" aria-checked="true" data-amb="Cozinha">Cozinha</button>
+            <button class="opt" type="button" role="radio" aria-checked="false" data-amb="Quarto">Quarto</button>
+            <button class="opt" type="button" role="radio" aria-checked="false" data-amb="Home office">Home office</button>
+          </div>
+          <p class="opt-help" id="opt-help">O desenho é de uma cozinha. O mesmo método de medição e divisão interna vale para quarto e home office.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 05 · MATERIAIS ===================== -->
+<section id="materiais" aria-labelledby="h-materiais">
+  <div class="faixa bg-olive" data-cap="materiais" data-dir="1">
+    <div class="faixa__track" aria-hidden="true">
+      <span>Materiais</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Materiais</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Materiais</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Materiais</span>
+    </div>
+    <h2 class="sr" id="h-materiais">Materiais e acabamento</h2>
+  </div>
+
+  <div class="palco-mat" id="mat-palco">
+    <div class="wrap-w" style="width:100%">
+      <p class="lead" style="margin-bottom:var(--s7)">O acabamento que você vê depende do que você não vê. No projeto, você escolhe cada item e sabe exatamente o que está comprando.</p>
+      <div class="mat-grid">
+        <div class="mat-pick">
+          <div class="grp">
+            <p class="grp-l" id="lbl-fr">Frentes</p>
+            <div class="sw-row" role="radiogroup" aria-labelledby="lbl-fr" id="sw-frente">
+              <button class="sw" type="button" role="radio" aria-checked="true" data-v="freijo"><i></i>Freijó</button>
+              <button class="sw" type="button" role="radio" aria-checked="false" data-v="carvalho"><i></i>Carvalho claro</button>
+              <button class="sw" type="button" role="radio" aria-checked="false" data-v="nogueira"><i></i>Nogueira</button>
+              <button class="sw" type="button" role="radio" aria-checked="false" data-v="grafite"><i></i>Grafite fosco</button>
+              <button class="sw" type="button" role="radio" aria-checked="false" data-v="offwhite"><i></i>Off-white fosco</button>
+            </div>
+          </div>
+          <div class="grp">
+            <p class="grp-l" id="lbl-es">Estrutura</p>
+            <div class="pill-row" role="radiogroup" aria-labelledby="lbl-es" id="sw-estr">
+              <button class="pl" type="button" role="radio" aria-checked="true" data-v="offwhite"><i></i>Off-white fosco</button>
+              <button class="pl" type="button" role="radio" aria-checked="false" data-v="grafite"><i></i>Grafite fosco</button>
+              <button class="pl" type="button" role="radio" aria-checked="false" data-v="igual"><i></i>Igual às frentes</button>
+            </div>
+          </div>
+          <p class="mat-live" id="mat-live" aria-live="polite">Frentes em Freijó, estrutura em Off-white fosco.</p>
+        </div>
+        <div class="mat-view">
+          <div class="mv-wrap">
+            <svg id="mv-mat" class="mv" viewBox="-40 -20 880 700" role="img" aria-label="Cozinha desenhada com o acabamento escolhido"></svg>
+          </div>
+          <p class="lbl" style="margin-top:12px;color:var(--ink-600)">A madeira é desenhada na hora, não é foto</p>
+        </div>
+      </div>
+
+      <div class="mat-cards" id="mat-cards">
+        <!-- PENDENTE: confirmar espessuras, linhas, marca de ferragem, processo de fita, instalação do LED e opções de puxador -->
+        <article class="mcard" data-open="false">
+          <h3>MDF</h3>
+          <button class="mbtn" type="button" aria-expanded="false" aria-label="Abrir detalhes sobre MDF"></button>
+          <div class="mbody"><div><p>Chapas em MDF com padrões amadeirados, lisos e foscos. Espessura e linha são definidas no projeto de cada ambiente.</p></div></div>
+        </article>
+        <article class="mcard" data-open="false">
+          <h3>Ferragens com amortecimento</h3>
+          <button class="mbtn" type="button" aria-expanded="false" aria-label="Abrir detalhes sobre ferragens"></button>
+          <div class="mbody"><div><p>Dobradiças e corrediças que fecham devagar, sem batida. Menos barulho na cozinha e menos desgaste na porta ao longo dos anos.</p></div></div>
+        </article>
+        <article class="mcard" data-open="false">
+          <h3>Fita de borda</h3>
+          <button class="mbtn" type="button" aria-expanded="false" aria-label="Abrir detalhes sobre fita de borda"></button>
+          <div class="mbody"><div><p>Acabamento aplicado nas laterais das chapas para proteger contra umidade e lascas, na mesma cor do móvel.</p>
+            <img src="assets/ed/mat-borda.jpg" width="700" height="467" alt="Marceneiro passando a plaina na lateral de uma peça" loading="lazy" decoding="async"></div></div>
+        </article>
+        <article class="mcard" data-open="false">
+          <h3>Iluminação em LED</h3>
+          <button class="mbtn" type="button" aria-expanded="false" aria-label="Abrir detalhes sobre iluminação"></button>
+          <div class="mbody"><div><p>Perfis de LED embutidos em armários aéreos, nichos, painéis e closets, com a fiação prevista desde o projeto.</p></div></div>
+        </article>
+        <article class="mcard" data-open="false">
+          <h3>Puxadores e perfis</h3>
+          <button class="mbtn" type="button" aria-expanded="false" aria-label="Abrir detalhes sobre puxadores"></button>
+          <div class="mbody"><div><p>Puxador cava, perfil em alumínio ou porta com toque, conforme o estilo do ambiente.</p></div></div>
+        </article>
+      </div>
+      <p class="mat-micro">Na visita técnica dá para ver e tocar as amostras antes de escolher.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 06 · DETALHE ===================== -->
+<section id="detalhe" class="cap" aria-label="Detalhes de acabamento">
+  <div class="pat pat-xadrez" aria-hidden="true"></div>
+  <div class="barras-holder" aria-hidden="true">
+    <div class="pat-barras" id="barras"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="wrap-w">
+    <div class="det-grid">
+      <figure class="det-1" data-px="80">
+        <img src="assets/ed/d-veio.jpg" width="547" height="820" alt="Macro do veio de uma chapa de nogueira" loading="lazy" decoding="async">
+        <figcaption class="lbl">Veio da madeira</figcaption>
+      </figure>
+      <figure class="det-2" data-px="45">
+        <img src="assets/ed/d-ferragem.jpg" width="900" height="600" alt="Dobradiça sendo parafusada em uma peça de madeira" loading="lazy" decoding="async">
+        <figcaption class="lbl">Ferragem com amortecimento</figcaption>
+      </figure>
+      <figure class="det-3" data-px="-30">
+        <img src="assets/ed/d-borda.jpg" width="547" height="820" alt="Régua sobre a borda de uma chapa de MDF" loading="lazy" decoding="async">
+        <figcaption class="lbl">Chapa e fita de borda</figcaption>
+      </figure>
+      <figure class="det-4" data-px="-70">
+        <img src="assets/ed/d-puxador.jpg" width="615" height="820" alt="Gavetas de madeira com puxador" loading="lazy" decoding="async">
+        <figcaption class="lbl">Puxador e gaveta</figcaption>
+      </figure>
+      <p class="det-frase">É nos detalhes que o planejado mostra se vai durar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 07 · PROCESSO ===================== -->
+<section id="processo" aria-labelledby="h-processo">
+  <div class="vid-palco" id="vid-palco">
+    <div class="media">
+      <video class="cine" id="v-proc" playsinline muted loop preload="none"
+        poster="assets/ed/proc-poster.jpg" width="1280" height="720"
+        aria-hidden="true" tabindex="-1"
+        data-src-h="assets/ed/proc-h.mp4" data-src-v="assets/ed/proc-v.mp4"></video>
+      <!-- vídeo: armário planejado sendo aberto na cozinha, o fim do processo -->
+    </div>
+    <div class="scrim-f" aria-hidden="true"></div>
+    <div class="faixa on-media" data-cap="processo" data-dir="1" style="height:auto;background:transparent;width:100%">
+      <div class="faixa__track" aria-hidden="true">
+        <span>Processo</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+        <span>Processo</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+        <span>Processo</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+        <span>Processo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="etapas-bloco">
+    <div class="wrap-w">
+      <h2 class="h2" id="h-processo">Como seu projeto sai do papel</h2>
+      <p class="lead">Cada projeto é feito com atenção aos detalhes. Por isso você sabe o que acontece em cada etapa, e nada vai para a produção sem a sua aprovação.</p>
+      <ul class="etapas" id="etapas">
+        <li class="etapa"><span class="en">01</span><h3>Conversa</h3><p>Você conta o que precisa pelo WhatsApp: quais ambientes, como usa cada um e o que incomoda hoje. Pode mandar fotos, planta e referências.</p></li>
+        <li class="etapa"><span class="en">02</span><h3>Medição no local</h3><p>Vamos até o imóvel e medimos parede por parede, com pontos de água, tomadas, janelas e desníveis. Medida estimada é porta que não fecha.</p></li>
+        <li class="etapa"><span class="en">03</span><h3>Projeto 3D e aprovação</h3><p>Você recebe o ambiente em 3D, com cores, acabamentos e a divisão interna de cada armário. Ajustamos até você aprovar.</p></li>
+        <li class="etapa"><span class="en">04</span><h3>Produção na marcenaria</h3><p>As peças são cortadas e montadas a partir do projeto aprovado, com as medidas do seu imóvel.</p></li>
+        <li class="etapa"><span class="en">05</span><h3>Montagem e entrega</h3><p>Nossa equipe instala, confere portas, gavetas e nivelamento e entrega o ambiente limpo. Você só assina quando estiver tudo combinado.</p></li>
+      </ul>
+      <div class="etapas-cta"><a class="btn btn-cu btn-lg wa" data-wa="default" href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Começar pela conversa</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 08 · ORÇAMENTO ===================== -->
+<section id="orcamento" aria-labelledby="h-orcamento">
+  <div class="faixa bg-taupe" data-cap="orcamento" data-dir="-1">
+    <div class="faixa__track" aria-hidden="true">
+      <span>Orçamento</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Orçamento</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Orçamento</span><svg class="faixa__ie" viewBox="0 0 236 433"><use href="#ie-I"/><use href="#ie-E"/></svg>
+      <span>Orçamento</span>
+    </div>
+    <h2 class="sr" id="h-orcamento">Monte seu orçamento</h2>
+  </div>
+
+  <div class="cap">
+    <div class="wrap-w">
+      <p class="lead">Marque os ambientes, informe as medidas que você tem e a gente recebe tudo pronto no WhatsApp. Medida aproximada serve: a visita técnica confirma.</p>
+      <div class="sim-grid">
+        <form class="sim-form" id="sim" novalidate>
+          <fieldset id="fs-amb" aria-describedby="h-amb">
+            <legend><span class="pn">Passo 1</span> · Quais ambientes entram no projeto?</legend>
+            <p class="help" id="h-amb">Pode marcar mais de um.</p>
+            <div class="chips" id="chips-amb"></div>
+            <p class="err" id="e-amb" hidden><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg>Marque pelo menos um ambiente.</p>
+          </fieldset>
+          <fieldset id="fs-med" hidden>
+            <legend><span class="pn">Passo 2</span> · Tamanho aproximado de cada ambiente</legend>
+            <p class="help">Pode ser a medida da parede onde vai o móvel ou o tamanho do cômodo. Se não souber, deixe em branco.</p>
+            <div class="med-list" id="med-list"></div>
+          </fieldset>
+          <fieldset>
+            <legend><span class="pn">Passo 3</span> · Em que fase está o imóvel?</legend>
+            <div class="chips" id="seg-fase"></div>
+            <p class="cond" id="cond-planta" hidden>Dá para começar pela planta do apartamento. A medição final é feita quando as paredes estiverem prontas.</p>
+          </fieldset>
+          <fieldset>
+            <legend><span class="pn">Passo 4</span> · Para quando você precisa dos móveis?</legend>
+            <div class="chips" id="seg-prazo"></div>
+          </fieldset>
+          <fieldset>
+            <legend><span class="pn">Passo 5</span> · Acabamento <span class="from-mat" id="from-mat" hidden>escolhido na seção Materiais</span></legend>
+            <div class="fld"><label for="s-frente">Frentes</label><select class="inp" id="s-frente"></select></div>
+            <div class="fld"><label for="s-estr">Estrutura</label><select class="inp" id="s-estr"></select></div>
+          </fieldset>
+          <fieldset>
+            <legend><span class="pn">Passo 6</span> · Contato</legend>
+            <div class="fld"><label for="s-nome">Seu nome</label><input class="inp" id="s-nome" autocomplete="name" placeholder="Como podemos te chamar?"><p class="err" id="e-nome" hidden><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg>Digite seu nome.</p></div>
+            <div class="fld"><label for="s-local">Bairro e cidade</label><input class="inp" id="s-local" autocomplete="address-level2" placeholder="ex. Centro"><p class="err" id="e-local" hidden><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg>Informe o bairro e a cidade.</p></div>
+            <div class="fld"><label for="s-msg">Quer contar mais alguma coisa? (opcional)</label><textarea class="inp" id="s-msg" rows="3" placeholder="Estilo que você gosta, cores, o que incomoda hoje no ambiente..."></textarea></div>
+          </fieldset>
+        </form>
+        <aside class="ficha" id="ficha" aria-label="Resumo do seu projeto">
+          <h3 class="h3">Seu projeto</h3>
+          <dl>
+            <div><dt>Ambientes</dt><dd id="f-amb" class="empty">A definir</dd></div>
+            <div><dt>Imóvel</dt><dd id="f-fase" class="empty">A definir</dd></div>
+            <div><dt>Prazo</dt><dd id="f-prazo" class="empty">A definir</dd></div>
+            <div><dt>Acabamento</dt><dd id="f-acab">Frentes em Freijó, estrutura em Off-white fosco</dd></div>
+            <div><dt>Nome e local</dt><dd id="f-nome" class="empty">A definir</dd></div>
+          </dl>
+          <p class="fnote">Estimativa para a conversa inicial. O valor sai depois da medição e do projeto 3D.</p>
+          <a class="btn btn-wa btn-lg" id="sim-send" href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Enviar meu projeto pelo WhatsApp</a>
+          <p class="sim-micro">A mensagem abre pronta no seu WhatsApp. Você revisa antes de enviar. Não guardamos seus dados.</p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 09 · EMPRESA ===================== -->
+<section id="empresa" class="cap" aria-labelledby="h-empresa">
+  <div class="wrap-w">
+    <div class="emp-grid">
+      <div class="emp-body">
+        <p class="eyebrow" style="margin-bottom:16px">A Essenza</p>
+        <h2 class="h2" id="h-empresa">Mais que móveis</h2>
+        <p>Na Essenza Projeto e Madeira, cada ambiente é pensado como único. A gente cria móveis planejados e projetos sob medida que juntam funcionalidade, bom acabamento e o estilo de quem vai morar ali.</p>
+        <p>Nosso propósito é simples de dizer e trabalhoso de cumprir: entregar soluções personalizadas em marcenaria, cuidando de cada detalhe do projeto, desde a primeira ideia até a instalação final.</p>
+        <!-- PENDENTE: confirmar com o cliente que ele sustenta os três compromissos abaixo -->
+        <ul class="compromissos">
+          <li><span>Projeto aprovado por você antes da produção.</span></li>
+          <li><span>Orçamento fechado sobre o projeto aprovado.</span></li>
+          <li><span>Prazo informado por escrito antes de começar.</span></li>
+        </ul>
+        <p class="assinatura" id="assin">Projeto que inspira. Madeira que transforma.</p>
+      </div>
+      <figure class="emp-fig">
+        <div class="pat pat-reguas" aria-hidden="true"></div>
+        <img src="assets/ed/empresa.jpg" width="653" height="980" alt="Canto de cozinha com armários em carvalho e cadeira de madeira" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CAP 10 · DÚVIDAS ===================== -->
+<section id="duvidas" class="cap" aria-labelledby="h-duvidas">
+  <div class="wrap-w">
+    <p class="eyebrow" style="margin-bottom:16px">Dúvidas</p>
+    <h2 class="h2" id="h-duvidas">Perguntas antes de fechar</h2>
+    <div class="faq" id="faq">
+      <details><summary>Quanto tempo leva do projeto até a instalação?</summary><div class="ans"><div><p>Depende do tamanho do projeto e de quantos ambientes entram. O prazo do seu projeto é informado por escrito antes de a produção começar.</p></div></div></details>
+      <details><summary>A visita técnica é cobrada?</summary><div class="ans"><div><p>Na visita medimos o imóvel, conferimos pontos de água, energia e desníveis e conversamos sobre o que você quer em cada ambiente. As condições da visita são combinadas no primeiro contato.</p></div></div></details>
+      <details><summary>Eu vejo o projeto antes de fechar?</summary><div class="ans"><div><p>Sim. Você recebe o ambiente em 3D, com cores, acabamentos e a divisão interna dos armários. Pode pedir ajustes até ficar do seu jeito. Nada vai para a produção sem a sua aprovação.</p></div></div></details>
+      <details><summary>Quais as formas de pagamento?</summary><div class="ans"><div><p>As condições ficam no orçamento final, junto com o projeto aprovado, para você ver o valor e o parcelamento na mesma folha.</p></div></div></details>
+      <details><summary>Os móveis têm garantia?</summary><div class="ans"><div><p>As condições de garantia vão junto com o orçamento. Se algo sair diferente do projeto na montagem, a gente ajusta antes de você assinar a entrega.</p></div></div></details>
+      <details><summary>Meu imóvel ainda está na planta. Já posso fazer o projeto?</summary><div class="ans"><div><p>Pode. Começamos pela planta do apartamento para você planejar os ambientes e o orçamento com antecedência. Quando as paredes estiverem prontas, fazemos a medição final e ajustamos o projeto às medidas reais antes de produzir.</p></div></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAP 11 · CTA ===================== -->
+<section id="cta" aria-labelledby="h-cta">
+  <div class="wrap-w">
+    <div class="cta-in" id="cta-in">
+      <div class="media"><img src="assets/ed/cta.jpg" data-srcm="assets/ed/cta@m.jpg" width="1700" height="1700" alt="Ambiente com marcenaria em madeira e iluminação indireta" loading="lazy" decoding="async"></div>
+      <div class="scrim-l" aria-hidden="true"></div>
+      <div class="scrim-b" aria-hidden="true"></div>
+        <div class="cta-tx">
+        <h2 class="h2" id="h-cta">Qual ambiente você quer<br>resolver primeiro?</h2>
+        <p class="sub lead">Mande uma mensagem com o cômodo e, se tiver, uma foto da parede. A conversa começa por aí.</p>
+        <a class="btn btn-wa btn-lg wa" data-wa="default" href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Falar com a Essenza no WhatsApp</a>
+        <p class="micro">Sem compromisso. Você só fecha depois de ver o projeto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== CAP 12 · RODAPÉ ===================== -->
+<footer id="rodape">
+  <div class="wrap-w">
+    <div class="ft-grid">
+      <div class="ft ft-brand">
+        <svg class="lockup" viewBox="0 0 300 64" aria-hidden="true">
+          <g class="mono" transform="scale(.1478)"><use href="#ie-I"/><use href="#ie-E"/></g>
+          <use class="w" href="#wm-word" transform="translate(56 36) scale(.7417)"/>
+          <use class="s" href="#wm-sub" transform="translate(58 58) scale(.7407)"/>
+        </svg>
+        <p>Móveis planejados e marcenaria sob medida, do desenho à instalação.</p>
+        <p class="ft-assin">Projeto que inspira. Madeira que transforma.</p>
+      </div>
+      <div class="ft">
+        <h4>Ambientes</h4>
+        <ul><li>Cozinhas planejadas</li><li>Quartos e closets</li><li>Salas e painéis</li><li>Home office</li><li>Banheiros</li><li>Móveis corporativos</li><li>Móveis sob medida</li></ul>
+      </div>
+      <div class="ft">
+        <h4>Falar com a gente</h4>
+        <!-- PENDENTE: Instagram, endereço, horário de atendimento e região atendida -->
+        <ul>
+          <li><a class="wa" data-wa="default" href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#orcamento">Montar meu orçamento</a></li>
+          <li><a href="#duvidas">Dúvidas frequentes</a></li>
+          <li><a href="#galeria">Ver ambientes</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ft-nota">As imagens desta página são de referência e servem para mostrar tipos de ambiente e de acabamento. Não são obras entregues pela Essenza. Assim que houver fotos dos projetos do cliente, elas entram no lugar.</p>
+    <p class="ft-fim">© 2026 Essenza Projeto e Madeira. Todos os direitos reservados.</p>
+  </div>
+  <div class="wm-giant" id="wm-giant" aria-hidden="true">
+    <svg viewBox="0 -37 329 38" preserveAspectRatio="none"><use class="w" href="#wm-word"/></svg>
+  </div>
+</footer>
+
+<a id="wa-fab" class="wa" data-wa="default" href="#" target="_blank" rel="noopener" aria-label="Abrir conversa com a Essenza no WhatsApp" tabindex="-1"><svg aria-hidden="true"><use href="#i-wa-fill"/></svg><span class="fab-t">Orçar meus móveis no WhatsApp</span></a>
+<div class="grao" id="grao" aria-hidden="true"></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script>
+/* ===================== a página sempre abre no hero ===================== */
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+const toTop = () => { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; };
+toTop();
+document.addEventListener("DOMContentLoaded", toTop);
+addEventListener("load", () => { toTop(); setTimeout(toTop, 60); setTimeout(toTop, 400); });
+addEventListener("pageshow", toTop);
+addEventListener("beforeunload", toTop);
+
+/* ===================== dados do cliente ===================== */
+const WA_NUMBER = '55XXXXXXXXXXX'; // PENDENTE: número de WhatsApp do cliente
+const WA_DEFAULT = 'Olá, vim pelo site da Essenza e quero um orçamento de móveis planejados.';
+const waUrl = t => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`;
+
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.clearScrollMemory("manual");
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduced) document.body.classList.add("rm");
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const vw = () => Math.max(innerWidth || 0, document.documentElement.clientWidth || 0);
+const isMob = () => vw() < 768;
+
+$$('a.wa[data-wa="default"]').forEach(a => a.href = waUrl(WA_DEFAULT));
+if (isMob()){
+  const c = $("#hero .ctaL"); if (c) c.textContent = "Pedir orçamento no WhatsApp";
+  const s1 = $("#sim-send"); if (s1) s1.lastChild.textContent = "Enviar pelo WhatsApp";
+  const f1 = $("#wa-fab .fab-t"); if (f1) f1.textContent = "Orçar no WhatsApp";
+}
+
+/* grão em data URI, gerado uma vez */
+(function(){
+  const t = `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="160" height="160" filter="url(#n)"/></svg>`;
+  $("#grao").style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(t)}")`;
+})();
+
+/* ===================== madeira procedural (reaproveitado da v1) ===================== */
+const MATS = {
+  freijo:   {name:"Freijó",          base:"#9A6436", dark:"#6B3F1C", light:"#B8804E", period:9,  warp:.6, contrast:.55, seed:11},
+  carvalho: {name:"Carvalho claro",  base:"#C49A6C", dark:"#9C7348", light:"#DDBB8F", period:7,  warp:.5, contrast:.45, seed:23},
+  nogueira: {name:"Nogueira",        base:"#5E3A22", dark:"#3B2313", light:"#7A5033", period:11, warp:.7, contrast:.6,  seed:37},
+  grafite:  {name:"Grafite fosco",   base:"#3A3836", solid:true, seed:41},
+  offwhite: {name:"Off-white fosco", base:"#E9E4DC", solid:true, seed:53}
+};
+const hexRgb = h => [1,3,5].map(i => parseInt(h.slice(i, i + 2), 16));
+function hash2(x, y, s){ let h = (Math.imul(x, 374761393) + Math.imul(y, 668265263) + Math.imul(s, 1442695041)) | 0; h = Math.imul(h ^ (h >>> 13), 1274126177); h ^= h >>> 16; return (h >>> 0) / 4294967295; }
+function vnoise(x, y, s, px, py){
+  const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
+  const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+  const x0 = ((xi % px) + px) % px, x1 = (x0 + 1) % px, y0 = ((yi % py) + py) % py, y1 = (y0 + 1) % py;
+  const a = hash2(x0, y0, s), b = hash2(x1, y0, s), c = hash2(x0, y1, s), d = hash2(x1, y1, s);
+  return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
+}
+function fbm(x, y, s, px, py){ let t = 0, amp = .5, f = 1; for (let o = 0; o < 4; o++){ t += amp * vnoise(x * f, y * f, s + o * 17, px * f, py * f); f *= 2; amp *= .5; } return t / .9375; }
+const woodCache = new Map();
+function makeWood(id){
+  if (woodCache.has(id)) return woodCache.get(id);
+  const o = MATS[id], W = 256, H = 512;
+  const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  const ctx = cv.getContext("2d"), img = ctx.createImageData(W, H), d = img.data;
+  const base = hexRgb(o.base);
+  if (o.solid){
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){
+      const i = (y * W + x) * 4, p = (hash2(x, y, o.seed) - .5) * .03 * 255;
+      d[i] = base[0] + p; d[i+1] = base[1] + p; d[i+2] = base[2] + p; d[i+3] = 255;
+    }
+  } else {
+    const dk = hexRgb(o.dark), lt = hexRgb(o.light);
+    const reps = Math.max(1, Math.round(W / o.period)), per = W / reps;
+    for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){
+      const n = fbm(x / 64, y / 256, o.seed, 4, 2);
+      const t = (x + n * per * o.warp * 6) / per;
+      const ring = Math.pow(.5 + .5 * Math.sin(2 * Math.PI * t), 2.2);
+      const s = fbm(x * 85 / 256, y * 3 / 512, o.seed + 99, 85, 3) * .22;
+      const p = (hash2(x, y, o.seed + 7) - .5) * .06;
+      const k = Math.min(1, Math.max(0, ring * o.contrast + s + p));
+      const i = (y * W + x) * 4;
+      for (let c = 0; c < 3; c++){ const col = lt[c] + (dk[c] - lt[c]) * k; d[i + c] = col + (base[c] - col) * .35; }
+      d[i+3] = 255;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+  const url = cv.toDataURL("image/webp", .9);
+  woodCache.set(id, url);
+  return url;
+}
+const PATTERNS = ["mat-c-frente","mat-c-estr","mat-frente","mat-frente-nova","mat-estrutura","mat-estrutura-nova"];
+$("#mat-defs").innerHTML = PATTERNS.map(id => `<pattern id="${id}" patternUnits="userSpaceOnUse" width="256" height="512" patternTransform="scale(.42)"><rect width="256" height="512" fill="#8C5A2E"/><image width="256" height="512" preserveAspectRatio="none" href=""/></pattern>`).join("");
+const setPattern = (id, mat) => { const p = document.getElementById(id); p.querySelector("image").setAttribute("href", makeWood(mat)); p.querySelector("rect").setAttribute("fill", MATS[mat].base); };
+setPattern("mat-c-frente", "freijo"); setPattern("mat-c-estr", "offwhite");
+
+/* ===================== geometria do móvel (reaproveitada da v1) ===================== */
+const X = mm => mm / 4, Y = mm => 650 - mm / 4;
+const R = ([x0, y0, x1, y1]) => ({x: X(x0), y: Y(y1), w: (x1 - x0) / 4, h: (y1 - y0) / 4});
+const rectPath = r => `M${r.x} ${r.y}H${r.x + r.w}V${r.y + r.h}H${r.x}Z`;
+const MODS = {torre:[0,100,600,2400], balcao:[620,100,2600,880], a1:[620,1500,1280,2200], an:[1280,1500,1940,2200], a3:[1940,1500,2600,2200]};
+const FRONTS = [
+  {r:[0,100,600,900], m:"torre", cava:"top"},
+  {r:[0,1500,600,2400], m:"torre", cava:"bottom"},
+  {r:[620,100,1280,360], m:"balcao", cava:"top"},
+  {r:[620,360,1280,620], m:"balcao", cava:"top"},
+  {r:[620,620,1280,880], m:"balcao", cava:"top"},
+  {r:[1280,100,1610,880], m:"balcao", cava:"top"},
+  {r:[1610,100,1940,880], m:"balcao", cava:"top"},
+  {r:[1940,100,2270,880], m:"balcao", cava:"top"},
+  {r:[2270,100,2600,880], m:"balcao", cava:"top"},
+  {r:[620,1500,1280,2200], m:"a1", cava:"bottom"},
+  {r:[1940,1500,2600,2200], m:"a3", cava:"bottom"}
+];
+FRONTS.forEach(f => {
+  const m = MODS[f.m], E = 18, g = 2; let [x0, y0, x1, y1] = f.r;
+  x0 += x0 === m[0] ? E : g; x1 -= x1 === m[2] ? E : g; y0 += y0 === m[1] ? E : g; y1 -= y1 === m[3] ? E : g;
+  f.i = [x0, y0, x1, y1];
+  const cy = f.cava === "top" ? y1 - 30 : y0 + 30;
+  f.cv = {x1: X(x0 + 20), x2: X(x1 - 20), y: Y(cy)};
+});
+const RIPAS = Array.from({length: 9}, (_, k) => [2650 + 60 * k, 0, 2690 + 60 * k, 2600]);
+const SHELF = [1298, 1841, 1922, 1859];
+const TAMPO = [610, 880, 2620, 920], PLINTO = [0, 0, 2600, 100], FORNO = [20, 900, 580, 1500], LED = [620, 1490, 2600, 1500];
+
+function movelBuild(){
+  let clipDefs = "", fills = "", ci = 0;
+  const clipFill = (mm, fill, cls = "clip-r") => {
+    const r = R(mm), id = `cb-${ci++}`;
+    clipDefs += `<clipPath id="${id}"><rect class="${cls}" x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" data-x="${r.x}" data-y="${r.y}" data-w="${r.w}" data-h="${r.h}" data-b="${r.y + r.h}"/></clipPath>`;
+    fills += `<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${fill}" clip-path="url(#${id})"/>`;
+  };
+  clipFill(PLINTO, "#2A221B");
+  Object.values(MODS).forEach(m => clipFill(m, "url(#mat-c-estr)"));
+  clipFill(SHELF, "url(#mat-c-estr)");
+  FRONTS.forEach(f => clipFill(f.i, "url(#mat-c-frente)"));
+  RIPAS.forEach(r => clipFill(r, "url(#mat-c-frente)", "clip-rip"));
+  clipFill(TAMPO, "#D9D2C7", "clip-t");
+  const fo = R(FORNO), led = R(LED), sh = R([620, 1440, 2600, 1500]);
+  const glow = R([620, 1080, 2600, 1490]);
+  const wall = `<path class="trace b-wall" d="${rectPath(R([0,0,3200,2600]))}"/><path class="trace b-wall" d="M${X(-200)} ${Y(0)}H${X(3400)}"/>`;
+  const mods = Object.values(MODS).map(m => `<path class="trace trace-mod" d="${rectPath(R(m))}"/>`).join("")
+    + RIPAS.map(r => `<path class="trace trace-mod" d="${rectPath(R(r))}"/>`).join("")
+    + `<path class="trace trace-mod" d="${rectPath(R(TAMPO))}"/>`;
+  const divs = FRONTS.map(f => `<path class="div" style="stroke-dasharray:6 4" d="${rectPath(R(f.i))}"/>`).join("")
+    + `<path class="div" style="stroke-dasharray:6 4" d="${rectPath(R(FORNO))}"/><path class="div" style="stroke-dasharray:6 4" d="${rectPath(R(SHELF))}"/>`;
+  const cava = FRONTS.map(f => `<line class="cava" x1="${f.cv.x1}" x2="${f.cv.x2}" y1="${f.cv.y}" y2="${f.cv.y}"/>`).join("");
+  const tick = (x, y) => `M${x - 4} ${y + 4}L${x + 4} ${y - 4}`;
+  const hC = (a, b, ymm, t) => { const y = Y(ymm), x0 = X(a), x1 = X(b); return `<g><path class="cl cl-h" d="M${x0} ${y}H${x1}${tick(x0, y)}${tick(x1, y)}"/><text class="ct" x="${(x0 + x1) / 2}" y="${y - 5}" text-anchor="middle">${t}</text></g>`; };
+  const vC = (xmm, a, b, t, side = -1) => { const x = X(xmm), y0 = Y(a), y1 = Y(b); const tx = x + side * 7; return `<g><path class="cl cl-v" d="M${x} ${y0}V${y1}${tick(x, y0)}${tick(x, y1)}"/><text class="ct" x="${tx}" y="${(y0 + y1) / 2}" text-anchor="middle" transform="rotate(-90 ${tx} ${(y0 + y1) / 2})">${t}</text></g>`; };
+  const ext = [0, 600, 620, 2600, 2650, 3130, 3200].map(x => `<path class="ext" d="M${X(x)} ${Y(x === 3200 || x === 0 ? 2600 : x >= 2650 ? 2600 : x <= 600 ? 2400 : 2200)}V${Y(2765)}"/>`).join("")
+    + `<path class="ext" d="M${X(610)} ${Y(920)}H${X(-145)}"/><path class="ext" d="M${X(2600)} ${Y(1500)}H${X(3315)}"/><path class="ext" d="M${X(2600)} ${Y(2200)}H${X(3315)}"/>`;
+  const cotas = `<g class="cotas">${ext}${hC(0,3200,2750,"3200")}${hC(0,600,2660,"600")}${hC(620,2600,2660,"1980")}${hC(2650,3130,2660,"480")}${vC(-250,0,2600,"2600")}${vC(-130,0,920,"920")}${vC(3300,1500,2200,"700",1)}</g>`;
+  return `<defs>${clipDefs}
+    <linearGradient id="gb-led" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD9A8" stop-opacity=".55"/><stop offset="1" stop-color="#FFD9A8" stop-opacity="0"/></linearGradient>
+    <linearGradient id="gb-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#110C08" stop-opacity=".35"/><stop offset="1" stop-color="#110C08" stop-opacity="0"/></linearGradient></defs>
+    ${wall}<g class="fills">${fills}</g>
+    <rect class="forno" x="${fo.x}" y="${fo.y}" width="${fo.w}" height="${fo.h}" fill="#15110D"/>
+    <rect class="shade" x="${sh.x}" y="${Y(1500)}" width="${sh.w}" height="12" fill="url(#gb-shade)"/>
+    <g class="led"><rect x="${glow.x}" y="${glow.y}" width="${glow.w}" height="${glow.h}" fill="url(#gb-led)"/><rect x="${led.x}" y="${led.y}" width="${led.w}" height="${led.h}" fill="#FFE3BD"/></g>
+    <g class="cavas">${cava}</g>${mods}${divs}${cotas}`;
+}
+function movelFinal(){
+  const rect = (mm, fill, extra = "") => { const r = R(mm); return `<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${fill}" ${extra}/>`; };
+  const carc = pat => Object.values(MODS).map(m => rect(m, `url(#${pat})`)).join("") + rect(SHELF, `url(#${pat})`);
+  const fronts = pat => FRONTS.map(f => rect(f.i, `url(#${pat})`)).join("") + RIPAS.map(r => rect(r, `url(#${pat})`)).join("");
+  const lines = FRONTS.map(f => { const r = R(f.i); return `<path d="${rectPath(r)}" fill="none" stroke="rgba(17,12,8,.35)" stroke-width="1" vector-effect="non-scaling-stroke"/>`; }).join("");
+  const cava = FRONTS.map(f => `<line class="cava" x1="${f.cv.x1}" x2="${f.cv.x2}" y1="${f.cv.y}" y2="${f.cv.y}"/>`).join("");
+  const glow = R([620, 1080, 2600, 1490]), led = R(LED), fo = R(FORNO);
+  return `<defs>
+    <clipPath id="wipe"><rect x="-40" y="-20" width="880" height="700"/></clipPath>
+    <clipPath id="wipe-e"><rect x="-40" y="-20" width="880" height="700"/></clipPath>
+    <linearGradient id="gf-led" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD9A8" stop-opacity=".4"/><stop offset="1" stop-color="#FFD9A8" stop-opacity="0"/></linearGradient>
+    <linearGradient id="gf-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#110C08" stop-opacity=".45"/><stop offset="1" stop-color="#110C08" stop-opacity="0"/></linearGradient></defs>
+    <g id="mvf-root">
+    ${rect([0,0,3200,2600], "#241C16")}
+    <line x1="${X(-150)}" x2="${X(3350)}" y1="650" y2="650" stroke="#3A2E24" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    ${rect(PLINTO, "#15110D")}
+    <g id="estrutura-atual">${carc("mat-estrutura")}</g>
+    <g id="estrutura-nova" clip-path="url(#wipe-e)">${carc("mat-estrutura-nova")}</g>
+    <g id="frentes-atual">${fronts("mat-frente")}</g>
+    <g id="frentes-nova" clip-path="url(#wipe)">${fronts("mat-frente-nova")}</g>
+    ${lines}
+    ${rect(TAMPO, "#D9D2C7")}
+    <rect x="${fo.x}" y="${fo.y}" width="${fo.w}" height="${fo.h}" fill="#15110D"/>
+    <rect x="${fo.x + 12}" y="${fo.y + 16}" width="${fo.w - 24}" height="${fo.h - 60}" rx="3" fill="none" stroke="rgba(247,242,235,.08)" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    <rect x="${X(620)}" y="${Y(1500)}" width="${X(1980)}" height="12" fill="url(#gf-shade)"/>
+    <rect x="${glow.x}" y="${glow.y}" width="${glow.w}" height="${glow.h}" fill="url(#gf-led)"/>
+    <rect x="${led.x}" y="${led.y}" width="${led.w}" height="${led.h}" fill="#FFE3BD"/>
+    ${cava}
+    </g>
+    <line id="wipe-line" x1="-40" x2="-40" y1="-20" y2="680" stroke="#7F5227" stroke-width="2" vector-effect="non-scaling-stroke" opacity="0"/>`;
+}
+$("#mv-build").innerHTML = movelBuild();
+$("#mv-mat").innerHTML = movelFinal();
+
+/* ===================== timeline do desenho técnico ===================== */
+const mvB = $("#mv-build");
+const tlBuild = (() => {
+  const q = s => mvB.querySelectorAll(s);
+  const dash = els => els.forEach(el => { const L = el.getTotalLength(); el.dataset.len = L; el.style.strokeDasharray = L; });
+  const walls = q(".b-wall"), mods = q(".trace-mod"); dash(walls); dash(mods);
+  const attrUp = {attr: {y: (i, el) => +el.dataset.b, height: 0}};
+  const attrFull = {attr: {y: (i, el) => +el.dataset.y, height: (i, el) => +el.dataset.h}};
+  const tl = gsap.timeline({paused: true});
+  tl.fromTo(walls, {strokeDashoffset: (i, el) => el.dataset.len}, {strokeDashoffset: 0, duration: .6, ease: "none"}, 0)
+    .fromTo(q(".cl-h"), {scaleX: 0}, {scaleX: 1, transformOrigin: "50% 50%", duration: .4, stagger: .06, ease: "power2.out"}, .1)
+    .fromTo(q(".cl-v"), {scaleY: 0}, {scaleY: 1, transformOrigin: "50% 50%", duration: .4, stagger: .06, ease: "power2.out"}, .2)
+    .fromTo(q(".ct"), {opacity: 0}, {opacity: 1, duration: .3, stagger: .06}, .5)
+    .fromTo(mods, {strokeDashoffset: (i, el) => el.dataset.len}, {strokeDashoffset: 0, duration: .55, stagger: .05, ease: "none"}, 1)
+    .fromTo(q(".ext"), {opacity: 0}, {opacity: .7, duration: .3}, 1.2)
+    .fromTo(q(".div"), {opacity: 0}, {opacity: 1, duration: .3}, 1.4)
+    .fromTo(q(".clip-r"), attrUp, {...attrFull, duration: .5, stagger: .07, ease: "power2.out"}, 2)
+    .fromTo(q(".clip-rip"), attrUp, {...attrFull, duration: .35, stagger: .03, ease: "power2.out"}, 2.3)
+    .fromTo(q(".clip-t"), {attr: {width: 0}}, {attr: {width: (i, el) => +el.dataset.w}, duration: .4, ease: "power2.out"}, 2.5)
+    .fromTo(q(".trace-mod, .div"), {strokeOpacity: 1}, {strokeOpacity: .28, duration: .8}, 2.1)
+    .set(q(".div"), {strokeDasharray: "none"}, 2.6)
+    .fromTo(q(".cava"), {opacity: 0}, {opacity: 1, duration: .3, stagger: .03}, 3)
+    .fromTo(q(".forno"), {fillOpacity: 0}, {fillOpacity: 1, duration: .3}, 3)
+    .fromTo(q(".led"), {opacity: 0, scaleY: .4}, {opacity: 1, scaleY: 1, transformOrigin: "50% 0%", duration: .5}, 3.2)
+    .fromTo(q(".shade"), {opacity: 0}, {opacity: 1, duration: .4}, 3.2)
+    .fromTo(q(".cotas"), {opacity: 1}, {opacity: .45, duration: .6}, 3.3)
+    .to({}, {duration: .4}, 4);
+  return tl;
+})();
+const stepEls = $$("#steps .step"), railFill = $("#steps .rail-fill"), prjBar = $("#prj-bar-fill");
+let curStep = -1;
+function setStepByTime(t){
+  const i = t < .95 ? 0 : t < 1.95 ? 1 : t < 2.95 ? 2 : t < 3.6 ? 3 : 4;
+  if (i !== curStep){ curStep = i; stepEls.forEach((el, k) => el.classList.toggle("on", k === i)); }
+  const p = Math.min(1, t / 4);
+  railFill.style.transform = `scaleY(${p})`;
+  if (prjBar) prjBar.style.transform = `scaleX(${p})`;
+}
+tlBuild.eventCallback("onUpdate", () => setStepByTime(tlBuild.time()));
+tlBuild.time(0); setStepByTime(0);
+
+/* ===================== acabamento: estado e wipes ===================== */
+const state = {frente: "freijo", estrutura: "offwhite"};
+try { const s = JSON.parse(sessionStorage.getItem("essenza-acab") || "null"); if (s && MATS[s.frente] && (MATS[s.estrutura] || s.estrutura === "igual")) Object.assign(state, s); } catch (e) {}
+const estrMat  = () => state.estrutura === "igual" ? state.frente : state.estrutura;
+const estrName = () => state.estrutura === "igual" ? "igual às frentes" : `em ${MATS[state.estrutura].name}`;
+const acabText = () => `Frentes em ${MATS[state.frente].name}, estrutura ${estrName()}`;
+const live = $("#mat-live");
+$$("#sw-frente .sw").forEach(b => b.querySelector("i").dataset.m = b.dataset.v);
+$$("#sw-estr .pl").forEach(b => b.querySelector("i").dataset.m = b.dataset.v === "igual" ? "" : b.dataset.v);
+function paintSwatches(){
+  $$("#materiais [data-m]").forEach(i => { if (i.dataset.m) i.style.backgroundImage = `url(${makeWood(i.dataset.m)})`; });
+  $('#sw-estr .pl[data-v="igual"] i').style.backgroundImage = `url(${makeWood(state.frente)})`;
+}
+function applyInstant(){
+  setPattern("mat-frente", state.frente); setPattern("mat-frente-nova", state.frente);
+  setPattern("mat-estrutura", estrMat()); setPattern("mat-estrutura-nova", estrMat());
+  gsap.set("#wipe rect", {attr: {width: 0}}); gsap.set("#wipe-e rect", {attr: {y: 680, height: 0}});
+}
+let wipeF = null, wipeE = null;
+function wipeFrente(){
+  if (wipeF){ wipeF.kill(); setPattern("mat-frente", wipeF.data); gsap.set("#wipe rect", {attr: {width: 0}}); gsap.set("#wipe-line", {opacity: 0}); }
+  const mat = state.frente;
+  if (reduced){ setPattern("mat-frente", mat); return; }
+  setPattern("mat-frente-nova", mat);
+  const line = $("#wipe-line");
+  wipeF = gsap.fromTo("#wipe rect", {attr: {width: 0}}, {attr: {width: 880}, duration: .42, ease: "power2.inOut", data: mat,
+    onStart: () => gsap.set(line, {opacity: .9}),
+    onUpdate: function(){ const w = +$("#wipe rect").getAttribute("width"); line.setAttribute("x1", -40 + w); line.setAttribute("x2", -40 + w); if (this.progress() > .82) line.setAttribute("opacity", Math.max(0, (1 - this.progress()) * 5)); },
+    onComplete: () => { setPattern("mat-frente", mat); gsap.set("#wipe rect", {attr: {width: 0}}); line.setAttribute("opacity", 0); wipeF = null; }});
+}
+function wipeEstr(){
+  if (wipeE){ wipeE.kill(); setPattern("mat-estrutura", wipeE.data); gsap.set("#wipe-e rect", {attr: {y: 680, height: 0}}); }
+  const mat = estrMat();
+  if (reduced){ setPattern("mat-estrutura", mat); return; }
+  setPattern("mat-estrutura-nova", mat);
+  wipeE = gsap.fromTo("#wipe-e rect", {attr: {y: 680, height: 0}}, {attr: {y: -20, height: 700}, duration: .42, ease: "power2.inOut", data: mat,
+    onComplete: () => { setPattern("mat-estrutura", mat); gsap.set("#wipe-e rect", {attr: {y: 680, height: 0}}); wipeE = null; }});
+}
+function syncMatUI(){
+  $$("#sw-frente .sw").forEach(b => { const on = b.dataset.v === state.frente; b.setAttribute("aria-checked", on); b.tabIndex = on ? 0 : -1; });
+  $$("#sw-estr .pl").forEach(b => { const on = b.dataset.v === state.estrutura; b.setAttribute("aria-checked", on); b.tabIndex = on ? 0 : -1; });
+  live.textContent = acabText() + ".";
+  $('#sw-estr .pl[data-v="igual"] i').style.backgroundImage = `url(${makeWood(state.frente)})`;
+}
+function setMaterial(kind, v, origin){
+  if (state[kind] === v) return;
+  const prevEstr = estrMat();
+  state[kind] = v;
+  if (kind === "frente") wipeFrente();
+  if (estrMat() !== prevEstr) wipeEstr();
+  syncMatUI();
+  try { sessionStorage.setItem("essenza-acab", JSON.stringify(state)); } catch (e) {}
+  document.dispatchEvent(new CustomEvent("essenza:acabamento", {detail: {...state, origin}}));
+}
+function radioGroup(sel, kind){
+  const btns = $$(sel);
+  btns.forEach((b, i) => {
+    b.addEventListener("click", () => setMaterial(kind, b.dataset.v, "mat"));
+    b.addEventListener("keydown", e => {
+      const dir = {ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1}[e.key];
+      if (!dir) return;
+      e.preventDefault();
+      const n = btns[(i + dir + btns.length) % btns.length];
+      n.focus(); setMaterial(kind, n.dataset.v, "mat");
+    });
+  });
+}
+radioGroup("#sw-frente .sw", "frente");
+radioGroup("#sw-estr .pl", "estrutura");
+applyInstant(); syncMatUI();
+const idle = window.requestIdleCallback || (fn => setTimeout(fn, 300));
+idle(() => { ["carvalho", "nogueira", "grafite"].forEach(makeWood); paintSwatches(); });
+
+/* ===================== opções de ambiente do desenho ===================== */
+(function(){
+  const opts = $$(".prj-opts .opt"), help = $("#opt-help");
+  const TXT = {
+    "Cozinha":"O desenho é de uma cozinha: torre quente, balcão, aéreos e painel ripado, cotados parede por parede.",
+    "Quarto":"No quarto o mesmo método vale para o guarda-roupa: cabideiro, gaveteiro e maleiro divididos pelo que você guarda.",
+    "Home office":"No home office as cotas definem a altura da bancada, a profundidade da prateleira e o vão do gaveteiro."
+  };
+  opts.forEach((b, i) => {
+    const pick = () => {
+      opts.forEach(o => { const on = o === b; o.setAttribute("aria-checked", on); o.tabIndex = on ? 0 : -1; });
+      help.textContent = TXT[b.dataset.amb];
+    };
+    b.addEventListener("click", pick);
+    b.addEventListener("keydown", e => {
+      const d = {ArrowRight:1, ArrowDown:1, ArrowLeft:-1, ArrowUp:-1}[e.key];
+      if (!d) return; e.preventDefault();
+      const n = opts[(i + d + opts.length) % opts.length]; n.focus(); n.click();
+    });
+    b.tabIndex = i === 0 ? 0 : -1;
+  });
+})();
+
+/* ===================== cards de material (disclosure) ===================== */
+$$("#mat-cards .mcard").forEach(card => {
+  const btn = card.querySelector(".mbtn");
+  btn.addEventListener("click", () => {
+    const open = card.dataset.open !== "true";
+    card.dataset.open = open;
+    btn.setAttribute("aria-expanded", open);
+    setTimeout(() => ScrollTrigger.refresh(), 300);
+  });
+});
+
+/* ===================== nav e menu mobile ===================== */
+const nav = $("#nav"), mob = $("#mob"), burger = $("#burger");
+let menuOpen = false;
+function setMenu(v){
+  menuOpen = v;
+  mob.classList.toggle("open", v);
+  v ? mob.removeAttribute("inert") : mob.setAttribute("inert", "");
+  burger.setAttribute("aria-expanded", v);
+  document.body.style.overflow = v ? "hidden" : "";
+  SMOOTH.enabled = v ? false : canSmooth();
+  if (v) mob.querySelector("a").focus();
+  else burger.focus();
+  updateFab();
+}
+burger.addEventListener("click", () => setMenu(!menuOpen));
+$("#mclose").addEventListener("click", () => setMenu(false));
+addEventListener("keydown", e => { if (e.key === "Escape" && menuOpen) setMenu(false); });
+
+function goTo(y){
+  if (menuOpen) setMenu(false);
+  const t = Math.max(0, Math.round(y));
+  if (SMOOTH.enabled){ target = t; current = t; window.scrollTo(0, t); ScrollTrigger.update(); }
+  else window.scrollTo({top: t, behavior: reduced ? "auto" : "smooth"});
+}
+$$('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    const id = a.getAttribute("href");
+    if (!id || id.charAt(0) !== "#" || id.length < 2) return;
+    const el = document.querySelector(id);
+    if (!el) return;
+    e.preventDefault();
+    goTo(el.getBoundingClientRect().top + scrollY - (id === "#hero" ? 0 : 8));
+  });
+});
+
+/* nav com tinta clara sobre blocos escuros (estado, não movimento) */
+(function(){
+  const darks = [$("#hero"), $("#vid-palco"), $(".etapas-bloco"), $("#cta-in"), $("footer")].filter(Boolean);
+  const hits = new Set();
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting ? hits.add(e.target) : hits.delete(e.target));
+    nav.classList.toggle("on-dark", hits.size > 0);
+  }, {rootMargin: `-${64 + 1}px 0px -${Math.max(0, innerHeight - 66)}px 0px`, threshold: 0});
+  darks.forEach(d => io.observe(d));
+})();
+
+/* ===================== vídeo ===================== */
+const VIDS = $$("video.cine");
+(function(){
+  const c = navigator.connection || {};
+  const magro = c.saveData === true ||
+                ["slow-2g","2g","3g"].includes(c.effectiveType) ||
+                (c.downlink && c.downlink < 1.6) ||
+                reduced ||
+                (navigator.deviceMemory && navigator.deviceMemory <= 2);
+  const vertical = matchMedia("(max-width: 767px)").matches;
+  VIDS.forEach(v => {
+    if (vertical){
+      const p = v.getAttribute("poster");
+      v.setAttribute("poster", p.replace(/\.jpg$/, "-v.jpg"));
+      v.width = 720; v.height = 1280;
+    }
+    if (magro){
+      const img = document.createElement("img");
+      img.src = v.getAttribute("poster");
+      img.alt = ""; img.setAttribute("aria-hidden", "true");
+      img.width = v.width; img.height = v.height;
+      img.decoding = "async";
+      v.replaceWith(img);
+      return;
+    }
+    const src = vertical ? v.dataset.srcV : v.dataset.srcH;
+    const load = () => { if (!v.src){ v.src = src; v.load(); } };
+    const io = new IntersectionObserver(es => { if (es[0].isIntersecting){ load(); io.disconnect(); } }, {rootMargin: "100% 0px"});
+    io.observe(v);
+  });
+})();
+const playables = $$("video.cine");
+function pauseAll(except){ playables.forEach(v => { if (v !== except) v.pause(); }); }
+const vio = new IntersectionObserver(es => es.forEach(e => {
+  const v = e.target;
+  if (e.isIntersecting && !document.hidden){ pauseAll(v); v.play().catch(() => {}); }
+  else v.pause();
+}), {threshold: .15});
+playables.forEach(v => vio.observe(v));
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden){ playables.forEach(v => v.pause()); gsap.ticker.sleep(); }
+  else { gsap.ticker.wake(); playables.forEach(v => { const r = v.getBoundingClientRect(); if (r.top < innerHeight * .85 && r.bottom > innerHeight * .15){ pauseAll(v); v.play().catch(() => {}); } }); }
+});
+
+/* ===================== smooth scroll por lerp (seção D da spec) ===================== */
+const SMOOTH = {lerp: .105, wheelMul: 1, maxTick: 240, stopAt: .4, enabled: false};
+let target = window.scrollY, current = target, rafId = 0, selfScroll = false;
+const maxScroll = () => document.documentElement.scrollHeight - innerHeight;
+const canSmooth = () =>
+  matchMedia("(pointer:fine)").matches &&
+  !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+  !matchMedia("(hover:none)").matches &&
+  innerWidth >= 1024;
+function loop(){
+  current += (target - current) * SMOOTH.lerp;
+  if (Math.abs(target - current) < SMOOTH.stopAt){ current = target; rafId = 0; }
+  selfScroll = true;
+  window.scrollTo(0, Math.round(current));
+  selfScroll = false;
+  ScrollTrigger.update();
+  if (rafId) rafId = requestAnimationFrame(loop);
+}
+function onWheel(e){
+  if (!SMOOTH.enabled) return;
+  if (e.ctrlKey) return;
+  if (e.target.closest && e.target.closest("[data-native-scroll]")) return;
+  e.preventDefault();
+  const d = Math.max(-SMOOTH.maxTick, Math.min(SMOOTH.maxTick, e.deltaY * SMOOTH.wheelMul));
+  target = Math.max(0, Math.min(maxScroll(), target + d));
+  if (!rafId) rafId = requestAnimationFrame(loop);
+}
+addEventListener("wheel", onWheel, {passive: false});
+addEventListener("scroll", () => { if (!selfScroll && !rafId) target = current = window.scrollY; }, {passive: true});
+function syncSmooth(){ target = current = window.scrollY; }
+function setSmooth(on){
+  SMOOTH.enabled = on;
+  if (!on){ cancelAnimationFrame(rafId); rafId = 0; }
+  syncSmooth();
+}
+setSmooth(canSmooth());
+let rt = 0;
+addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { setSmooth(canSmooth()); }, 200); });
+ScrollTrigger.addEventListener("refresh", syncSmooth);
+document.addEventListener("focusin", e => { if (e.target.closest("#orcamento, #empresa")) setSmooth(false); });
+document.addEventListener("focusout", e => { if (e.target.closest("#orcamento, #empresa")) setTimeout(() => { if (!document.activeElement || !document.activeElement.closest("#orcamento, #empresa")) setSmooth(canSmooth()); }, 60); });
+
+/* ===================== botão flutuante ===================== */
+const fab = $("#wa-fab");
+let pastHero = false;
+const blockers = new Set();
+function updateFab(){
+  const show = pastHero && blockers.size === 0 && !menuOpen;
+  fab.classList.toggle("show", show);
+  fab.tabIndex = show ? 0 : -1;
+}
+
+/* ===================== movimento ===================== */
+const TRAVEL = {desk: 980, tab: 620, mob: 24};
+const wc = (sel, on) => $$(sel).forEach(el => el.style.willChange = on ? "transform" : "auto");
+
+/* ScrollTriggers precisam ser atualizados na ordem da página, senão o espaçador de um pin
+   criado depois desloca quem foi medido antes. O ScrollTrigger atualiza primeiro quem tem
+   refreshPriority MAIOR, então o primeiro capítulo recebe o maior número. */
+const SECS = [...document.querySelectorAll("main > section, footer")];
+function prio(ref){
+  const el = typeof ref === "string" ? document.querySelector(ref) : ref;
+  if (!el) return 0;
+  const sec = el.closest("main > section") || el.closest("footer") || el;
+  const i = SECS.indexOf(sec);
+  return i < 0 ? 0 : (SECS.length - i);
+}
+
+function faixas(travel, scrub, center){
+  $$(".faixa[data-cap]").forEach(f => {
+    const track = f.querySelector(".faixa__track");
+    const dir = +f.dataset.dir;
+    /* centrado: a palavra fica inteira na tela e so deriva um pouco (celular) */
+    const from = center ? (dir === -1 ? travel / 2 : -travel / 2) : (dir === -1 ? 0 : -travel);
+    const to   = center ? -from : (dir === -1 ? -travel : 0);
+    gsap.fromTo(track, {x: from}, {
+      x: to, ease: "none",
+      scrollTrigger: {trigger: f, start: "top bottom", end: "bottom top", scrub,
+        invalidateOnRefresh: true, refreshPriority: prio(f),
+        onToggle: s => track.style.willChange = s.isActive ? "transform" : "auto"}
+    });
+  });
+}
+
+function reveals(){
+  /* abertura: parágrafo linha a linha */
+  gsap.fromTo("#ab-lead .l>span",
+    {yPercent: 110}, {yPercent: 0, duration: .9, ease: "power3.out", stagger: .06,
+      scrollTrigger: {trigger: "#ab-lead", start: "top 80%", once: true, refreshPriority: prio("#ab-lead")}});
+  /* cards de número */
+  gsap.fromTo("#nums-grid .ncard", {y: 28, opacity: 0},
+    {y: 0, opacity: 1, duration: .52, ease: "power3.out", stagger: .08,
+      scrollTrigger: {trigger: "#nums-grid", start: "top 78%", once: true, refreshPriority: prio("#nums-grid")}});
+  /* swatches */
+  gsap.fromTo("#sw-frente .sw", {y: 16, opacity: 0},
+    {y: 0, opacity: 1, duration: .45, ease: "power3.out", stagger: .07,
+      scrollTrigger: {trigger: "#sw-frente", start: "top 82%", once: true, refreshPriority: prio("#sw-frente")}});
+  /* barras */
+  gsap.fromTo("#barras i", {scaleY: 0},
+    {scaleY: 1, duration: .48, ease: "power3.out", stagger: .04,
+      scrollTrigger: {trigger: "#barras", start: "top 85%", once: true, refreshPriority: prio("#barras")}});
+  /* etapas */
+  gsap.fromTo("#etapas .etapa", {y: 32, opacity: 0},
+    {y: 0, opacity: 1, duration: .55, ease: "power3.out", stagger: .09,
+      scrollTrigger: {trigger: "#etapas", start: "top 78%", once: true, refreshPriority: prio("#etapas")}});
+  /* assinatura */
+  gsap.fromTo("#assin", {clipPath: "inset(0 100% 0 0)", opacity: .2},
+    {clipPath: "inset(0 0% 0 0)", opacity: 1, duration: 1.2, ease: "power2.inOut",
+      scrollTrigger: {trigger: "#assin", start: "top 82%", once: true, refreshPriority: prio("#assin")}});
+}
+
+function pageBg(){
+  [[$(".etapas-bloco"), "var(--olive-600)"], [$("#cta-in"), "var(--walnut-800)"], [$("footer"), "var(--walnut-800)"]]
+  .forEach(([el, bg]) => {
+    if (!el) return;
+    ScrollTrigger.create({trigger: el, start: "top 50%", end: "bottom 50%", refreshPriority: prio(el),
+      onToggle: s => document.documentElement.style.setProperty("--page-bg", s.isActive ? bg : "var(--cream-100)")});
+  });
+}
+
+/* nav sólida e botão flutuante valem em todo contexto, inclusive reduced motion */
+ScrollTrigger.create({start: 24, end: "max", refreshPriority: -10,
+  onToggle: s => nav.classList.toggle("solid", s.isActive)});
+/* no rodape a nav recolhe: sem ela o texto do rodape nao fica por baixo da barra fixa no fim da pagina */
+ScrollTrigger.create({trigger: "footer", start: "top 30%", refreshPriority: -10, invalidateOnRefresh: true,
+  onEnter: () => nav.classList.add("tuck"), onLeaveBack: () => nav.classList.remove("tuck")});
+ScrollTrigger.create({start: () => Math.round(innerHeight * .85), end: "max", invalidateOnRefresh: true,
+  refreshPriority: -10, onToggle: s => { pastHero = s.isActive; updateFab(); }});
+["#orcamento", "#empresa", "#cta", "#rodape"].forEach(sel => {
+  const el = $(sel); if (!el) return;
+  ScrollTrigger.create({trigger: el, start: "top 80%", end: "bottom 20%", refreshPriority: prio(el),
+    onToggle: s => { s.isActive ? blockers.add(sel) : blockers.delete(sel); updateFab(); }});
+});
+
+const mm = gsap.matchMedia();
+
+/* ---------- contexto comum a todo mundo que não é reduced motion ---------- */
+mm.add("(prefers-reduced-motion: no-preference)", () => {
+  reveals();
+  pageBg();
+
+  /* hero */
+  const heroTl = gsap.timeline({scrollTrigger: {
+    trigger: "#hero", start: "top top", end: () => "+=" + (isMob() ? 500 : 900),
+    scrub: .6, pin: true, pinSpacing: true, invalidateOnRefresh: true, refreshPriority: prio("#hero"), anticipatePin: 1,
+    onToggle: s => { SMOOTH.lerp = s.isActive ? .16 : .105; wc("#hero .media img", s.isActive); }}});
+  heroTl.fromTo("#hero .media img", {scale: 1.06, yPercent: 0}, {scale: 1.16, yPercent: -5, ease: "none"}, 0)
+        .fromTo("#hero-scrim", {opacity: .78}, {opacity: 1, ease: "none"}, 0)
+        .fromTo("#hero .hero-tx", {y: 0, opacity: 1}, {y: -120, opacity: 0, ease: "none"}, .65);
+
+  /* abertura: parallax em 4 camadas, um trigger só */
+  const abTl = gsap.timeline({scrollTrigger: {trigger: "#abertura", start: "top bottom", end: "bottom top", scrub: .9, refreshPriority: prio("#abertura")}});
+  abTl.fromTo("#abertura .fig-a", {y: 48}, {y: -48, ease: "none"}, 0)
+      .fromTo("#abertura .fig-b", {y: 90}, {y: -90, ease: "none"}, 0)
+      .fromTo("#abertura .fig-c", {y: 28}, {y: -28, ease: "none"}, 0)
+      .fromTo("#pat-ab", {y: 120}, {y: -120, ease: "none"}, 0);
+
+  /* fundo dos números */
+  gsap.fromTo("#nums-media img", {yPercent: -6}, {yPercent: 6, ease: "none",
+    scrollTrigger: {trigger: "#ambientes .nums-wrap", start: "top bottom", end: "bottom top", scrub: .8, refreshPriority: prio("#ambientes")}});
+
+  /* colagem de detalhes */
+  const detTl = gsap.timeline({scrollTrigger: {trigger: "#detalhe", start: "top bottom", end: "bottom top", scrub: 1, refreshPriority: prio("#detalhe")}});
+  $$("#detalhe .det-grid figure").forEach(f => {
+    const d = +f.dataset.px;
+    detTl.fromTo(f, {y: d}, {y: -d, ease: "none"}, 0);
+  });
+
+  /* foto da empresa */
+  gsap.fromTo("#empresa .emp-fig img", {y: 60}, {y: -60, ease: "none",
+    scrollTrigger: {trigger: "#empresa .emp-fig", start: "top bottom", end: "bottom top", scrub: .9, refreshPriority: prio("#empresa")}});
+
+  /* CTA sobe sobre o rodapé */
+  gsap.fromTo("#cta-in", {y: 80}, {y: 0, ease: "none",
+    scrollTrigger: {trigger: "#cta", start: "top bottom", end: "top 30%", scrub: .6, refreshPriority: prio("#cta")}});
+
+  /* wordmark gigante emerge */
+  gsap.fromTo("#wm-giant", {y: 120}, {y: 0, ease: "none",
+    scrollTrigger: {trigger: "#rodape", start: "top 70%", end: "bottom bottom", scrub: 1, refreshPriority: prio("#rodape")}});
+});
+
+/* ---------- desktop ---------- */
+mm.add("(min-width:1024px) and (prefers-reduced-motion: no-preference)", () => {
+  faixas(TRAVEL.desk, .55);
+
+  /* galeria: pan horizontal pinado */
+  const desk = $("#gal-desk"), track = $("#gal-track"), paineis = $$("#gal-track .painel");
+  desk.dataset.anim = "1";
+  const dist = () => track.scrollWidth - innerWidth;
+  const gal = gsap.to(track, {
+    x: () => -dist(), ease: "none",
+    scrollTrigger: {
+      trigger: "#gal-desk", start: "top top", end: "+=3600",
+      pin: true, scrub: .8, invalidateOnRefresh: true, refreshPriority: prio("#galeria"), anticipatePin: 1,
+      snap: matchMedia("(pointer:fine)").matches
+        ? {snapTo: 1 / (paineis.length - 1), duration: {min: .15, max: .35}, delay: .04, ease: "power2.inOut", inertia: false}
+        : false,
+      onToggle: s => { SMOOTH.lerp = s.isActive ? .16 : .105;
+        desk.classList.toggle("pinned", s.isActive);
+        track.style.willChange = s.isActive ? "transform" : "auto";
+        wc("#gal-track .painel .media img", s.isActive); }
+    }
+  });
+  paineis.forEach(p => {
+    gsap.fromTo(p.querySelector(".media img"), {xPercent: 6}, {xPercent: -6, ease: "none",
+      scrollTrigger: {trigger: p, containerAnimation: gal, start: "left center", end: "right center", scrub: .5,
+        refreshPriority: prio("#galeria")}});
+  });
+
+  /* desenho técnico pinado */
+  ScrollTrigger.create({
+    trigger: "#prj-palco", start: "top top", end: "+=2000", pin: true, scrub: .7,
+    invalidateOnRefresh: true, refreshPriority: prio("#projeto"), anticipatePin: 1,
+    onToggle: s => SMOOTH.lerp = s.isActive ? .16 : .105,
+    onUpdate: s => tlBuild.time(s.progress * tlBuild.duration())
+  });
+
+  /* materiais: só o pin, a troca é por clique */
+  ScrollTrigger.create({trigger: "#mat-palco", start: "top top", end: "+=1400", pin: true,
+    invalidateOnRefresh: true, refreshPriority: prio("#materiais"), anticipatePin: 1,
+    onToggle: s => SMOOTH.lerp = s.isActive ? .16 : .105});
+
+  /* vídeo do processo */
+  gsap.fromTo("#vid-palco .media > *", {scale: 1.08}, {scale: 1, ease: "none",
+    scrollTrigger: {trigger: "#vid-palco", start: "top top", end: "+=800", pin: true, scrub: .6,
+      invalidateOnRefresh: true, refreshPriority: prio("#processo"), anticipatePin: 1,
+      onToggle: s => { SMOOTH.lerp = s.isActive ? .16 : .105; wc("#vid-palco .media > *", s.isActive); }}});
+
+  return () => { desk.removeAttribute("data-anim"); desk.classList.remove("pinned"); };
+});
+
+/* ---------- tablet ---------- */
+mm.add("(min-width:768px) and (max-width:1023px) and (min-height:600px) and (prefers-reduced-motion: no-preference)", () => {
+  faixas(TRAVEL.tab, .55);
+  ScrollTrigger.create({trigger: "#prj-palco", start: "top top", end: "+=1600", pin: true, scrub: .7,
+    invalidateOnRefresh: true, refreshPriority: prio("#projeto"), anticipatePin: 1,
+    onUpdate: s => tlBuild.time(s.progress * tlBuild.duration())});
+  gsap.fromTo("#vid-palco .media > *", {scale: 1.08}, {scale: 1, ease: "none",
+    scrollTrigger: {trigger: "#vid-palco", start: "top top", end: "+=600", pin: true, scrub: .6,
+      invalidateOnRefresh: true, refreshPriority: prio("#processo"), anticipatePin: 1}});
+});
+
+/* ---------- mobile ---------- */
+mm.add("(max-width:767px) and (min-height:600px) and (prefers-reduced-motion: no-preference)", () => {
+  faixas(TRAVEL.mob, .6, true);
+  /* no celular a cena entra com a parede e as cotas ja desenhadas, nunca como caixa vazia */
+  ScrollTrigger.create({trigger: "#prj-palco", start: "top top", end: "+=1200", pin: true, scrub: .7,
+    invalidateOnRefresh: true, refreshPriority: prio("#projeto"), anticipatePin: 1,
+    onUpdate: s => tlBuild.time((.22 + s.progress * .78) * tlBuild.duration())});
+  tlBuild.time(.22 * tlBuild.duration());
+  /* no celular o palco de materiais e mais alto que a tela: pin travaria a rolagem com metade da cena cortada */
+  gsap.fromTo("#vid-palco .media > *", {scale: 1.08}, {scale: 1, ease: "none",
+    scrollTrigger: {trigger: "#vid-palco", start: "top top", end: "+=500", pin: true, scrub: .6,
+      invalidateOnRefresh: true, refreshPriority: prio("#processo"), anticipatePin: 1}});
+});
+
+/* ---------- altura curta (celular deitado): sem pin, a cena nao cabe na tela ---------- */
+mm.add("(max-width:1023px) and (max-height:599px) and (prefers-reduced-motion: no-preference)", () => {
+  faixas(TRAVEL.mob, .6, true);
+  tlBuild.progress(1); setStepByTime(4);
+});
+
+/* ---------- reduced motion: desenho técnico entra pronto ---------- */
+mm.add("(prefers-reduced-motion: reduce)", () => { tlBuild.progress(1); setStepByTime(4); });
+
+/* ===================== galeria: setas (desktop) e progresso (mobile) ===================== */
+(function(){
+  const desk = $("#gal-desk"), paineis = $$("#gal-track .painel");
+  const goPanel = i => {
+    const st = ScrollTrigger.getAll().find(s => s.pin === desk || (s.trigger === desk && s.pin));
+    if (!st) return;
+    const k = Math.max(0, Math.min(paineis.length - 1, i));
+    goTo(st.start + (st.end - st.start) * (k / (paineis.length - 1)) + 2);
+  };
+  paineis.forEach((p, i) => {
+    p.querySelector(".g-prev").addEventListener("click", () => goPanel(i - 1));
+    p.querySelector(".g-next").addEventListener("click", () => goPanel(i + 1));
+    if (i === 0) p.querySelector(".g-prev").disabled = true;
+    if (i === paineis.length - 1) p.querySelector(".g-next").disabled = true;
+  });
+  const sc = $("#gal-scroll"), fill = $("#gbar-fill"), count = $("#gcount");
+  if (sc){
+    let tick = 0;
+    sc.addEventListener("scroll", () => {
+      if (tick) return;
+      tick = requestAnimationFrame(() => {
+        tick = 0;
+        const n = sc.children.length;
+        const max = sc.scrollWidth - sc.clientWidth;
+        const p = max > 0 ? sc.scrollLeft / max : 0;
+        fill.style.transform = `translateX(${p * (100 * (n - 1))}%)`;
+        count.textContent = `${Math.min(n, Math.round(p * (n - 1)) + 1)} / ${n}`;
+      });
+    }, {passive: true});
+  }
+})();
+
+/* ===================== simulador (reaproveitado da v1) ===================== */
+const AMBS = ["Cozinha","Quarto","Closet","Sala e painel de TV","Home office","Banheiro","Área de serviço","Móvel corporativo","Outro"];
+const FASES = ["Na planta","Em obra ou reforma","Pronto, vazio","Já moro nele"];
+const PRAZOS = ["O quanto antes","Em até 3 meses","De 3 a 6 meses","Ainda estou pesquisando"];
+const chk = `<svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>`;
+$("#chips-amb").innerHTML = AMBS.map((a, i) => `<span class="chip"><input type="checkbox" id="amb-${i}" value="${a}" name="amb"><label for="amb-${i}">${chk}${a}</label></span>`).join("");
+$("#seg-fase").innerHTML = FASES.map((a, i) => `<span class="chip"><input type="radio" id="fase-${i}" value="${a}" name="fase"><label for="fase-${i}">${chk}${a}</label></span>`).join("");
+$("#seg-prazo").innerHTML = PRAZOS.map((a, i) => `<span class="chip"><input type="radio" id="prazo-${i}" value="${a}" name="prazo"><label for="prazo-${i}">${chk}${a}</label></span>`).join("");
+$("#s-frente").innerHTML = Object.entries(MATS).map(([k, m]) => `<option value="${k}">${m.name}</option>`).join("");
+$("#s-estr").innerHTML = `<option value="offwhite">Off-white fosco</option><option value="grafite">Grafite fosco</option><option value="igual">Igual às frentes</option>`;
+const medVals = {};
+const fmtNum = v => { const n = parseFloat(String(v || "").trim().replace(",", ".")); return isFinite(n) && n > 0 ? n.toFixed(2).replace(".", ",") : ""; };
+function renderMed(){
+  const sel = $$("#chips-amb input:checked").map(i => i.value);
+  $("#fs-med").hidden = sel.length === 0;
+  renumberSteps();
+  const list = $("#med-list");
+  $$(".med", list).forEach(b => { if (!sel.includes(b.dataset.a)) b.remove(); });
+  sel.forEach((a, idx) => {
+    let b = $$(".med", list).find(x => x.dataset.a === a);
+    if (!b){
+      const k = AMBS.indexOf(a); medVals[a] = medVals[a] || {w: "", l: "", nk: false};
+      b = document.createElement("div"); b.className = "med"; b.dataset.a = a;
+      b.innerHTML = `<h4>${a}</h4>
+        <div class="fld"><label for="w-${k}">Largura (m)</label><input class="inp" id="w-${k}" inputmode="decimal" placeholder="ex. 3,20" value="${medVals[a].w}"></div>
+        <div class="fld"><label for="l-${k}">Comprimento (m)</label><input class="inp" id="l-${k}" inputmode="decimal" placeholder="ex. 2,80" value="${medVals[a].l}"></div>
+        <label class="nk"><input type="checkbox" ${medVals[a].nk ? "checked" : ""}>Não sei as medidas</label>`;
+      const [w, l] = b.querySelectorAll(".inp"), nk = b.querySelector(".nk input");
+      const sync = () => { medVals[a] = {w: w.value, l: l.value, nk: nk.checked}; w.disabled = l.disabled = nk.checked; };
+      [w, l, nk].forEach(el => el.addEventListener("input", sync)); nk.addEventListener("change", sync); sync();
+      if (!reduced) gsap.fromTo(b, {opacity: 0, y: 8}, {opacity: 1, y: 0, duration: .24, ease: "power2.out"});
+    }
+    const pos = [...list.children];
+    if (pos[idx] !== b) list.insertBefore(b, pos[idx] || null);
+  });
+  setTimeout(() => ScrollTrigger.refresh(), 260);
+}
+const ambLine = (a, sep) => {
+  const m = medVals[a] || {}; const w = fmtNum(m.w), l = fmtNum(m.l);
+  if (m.nk || (!w && !l)) return `${a}${sep}medidas na visita`;
+  if (w && l) return `${a}${sep}${w} x ${l} m`;
+  return `${a}${sep}parede de ${w || l} m`;
+};
+function buildMsg(){
+  const sel = $$("#chips-amb input:checked").map(i => i.value);
+  const fase = $("#seg-fase input:checked")?.value || "", prazo = $("#seg-prazo input:checked")?.value || "";
+  const nome = $("#s-nome").value.trim(), local = $("#s-local").value.trim(), det = $("#s-msg").value.trim();
+  let m = `Olá, vim pelo site da Essenza e quero um orçamento de móveis planejados.\n\nNome: ${nome}\nLocal: ${local}\n\nAmbientes:\n`;
+  m += sel.length ? sel.map(a => `• ${ambLine(a, ": ")}`).join("\n") : "• a definir";
+  m += "\n\n";
+  if (fase) m += `Imóvel: ${fase}\n`;
+  if (prazo) m += `Prazo: ${prazo}\n`;
+  m += `Acabamento: frentes em ${MATS[state.frente].name}, estrutura ${estrName()}\n`;
+  if (det) m += `\nDetalhes: ${det}\n`;
+  m += `\nPodemos agendar a visita técnica?`;
+  return {m, sel, fase, prazo, nome, local};
+}
+const setDD = (id, val, html) => {
+  const el = $(id), txt = val || "A definir", next = html || txt;
+  if (el.innerHTML === next) return;
+  el.innerHTML = next; el.classList.toggle("empty", !val);
+  if (!reduced && val){ el.classList.add("flash"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("flash"), 400); }
+};
+function renumberSteps(){
+  let n = 0;
+  $$("#sim fieldset").forEach(fs => {
+    if (fs.hidden) return;
+    n++;
+    const t = fs.querySelector(".pn");
+    if (t) t.textContent = "Passo " + n;
+  });
+}
+function updateSim(){
+  const {m, sel, fase, prazo, nome, local} = buildMsg();
+  setDD("#f-amb", sel.length ? "x" : "", sel.length ? `<ul class="fx-amb">${sel.map(a => `<li>${ambLine(a, " · ")}</li>`).join("")}</ul>` : "");
+  setDD("#f-fase", fase); setDD("#f-prazo", prazo);
+  setDD("#f-acab", acabText());
+  setDD("#f-nome", [nome, local].filter(Boolean).join(", "));
+  $("#sim-send").href = waUrl(m);
+  $("#s-frente").value = state.frente; $("#s-estr").value = state.estrutura;
+  $("#ficha").classList.toggle("armed", sel.length > 0);
+  $("#cond-planta").hidden = fase !== "Na planta";
+}
+function showErr(el, errEl, bad){
+  errEl.hidden = !bad;
+  if (el.tagName === "INPUT"){ el.setAttribute("aria-invalid", bad); bad ? el.setAttribute("aria-describedby", errEl.id) : el.removeAttribute("aria-describedby"); }
+  else el.setAttribute("aria-describedby", bad ? `h-amb ${errEl.id}` : "h-amb");
+}
+let simTried = false;
+function validateSim(){
+  const noAmb = !$$("#chips-amb input:checked").length, noNome = !$("#s-nome").value.trim(), noLocal = !$("#s-local").value.trim();
+  showErr($("#fs-amb"), $("#e-amb"), noAmb); showErr($("#s-nome"), $("#e-nome"), noNome); showErr($("#s-local"), $("#e-local"), noLocal);
+  return {ok: !noAmb && !noNome && !noLocal, first: noAmb ? $("#amb-0") : noNome ? $("#s-nome") : noLocal ? $("#s-local") : null};
+}
+$("#sim").addEventListener("input", e => {
+  if (e.target.name === "amb") renderMed();
+  if (e.target.id === "s-frente") setMaterial("frente", e.target.value, "sim");
+  if (e.target.id === "s-estr") setMaterial("estrutura", e.target.value, "sim");
+  updateSim(); if (simTried) validateSim();
+});
+$("#sim").addEventListener("change", e => { if (e.target.name === "amb") renderMed(); updateSim(); if (simTried) validateSim(); });
+$("#sim").addEventListener("submit", e => e.preventDefault());
+$("#sim-send").addEventListener("click", e => {
+  updateSim(); simTried = true;
+  const v = validateSim();
+  if (!v.ok){
+    e.preventDefault();
+    const f = v.first;
+    goTo(f.getBoundingClientRect().top + scrollY - 140);
+    setTimeout(() => f.focus({preventScroll: true}), reduced ? 0 : 420);
+  }
+});
+document.addEventListener("essenza:acabamento", e => { $("#from-mat").hidden = e.detail.origin !== "mat"; updateSim(); });
+updateSim();
+renumberSteps();
+
+/* ===================== FAQ ===================== */
+$$("#faq details").forEach(d => {
+  const s = d.querySelector("summary");
+  s.addEventListener("click", e => {
+    e.preventDefault();
+    if (d.open){
+      d.classList.remove("is-open");
+      if (reduced) d.open = false; else setTimeout(() => { if (!d.classList.contains("is-open")) d.open = false; }, 260);
+    } else {
+      d.open = true;
+      if (reduced) d.classList.add("is-open"); else requestAnimationFrame(() => requestAnimationFrame(() => d.classList.add("is-open")));
+    }
+    setTimeout(() => { ScrollTrigger.refresh(); syncSmooth(); }, 320);
+  });
+});
+
+/* ===================== start ===================== */
+document.fonts.ready.then(() => { ScrollTrigger.refresh(); toTop(); });
+addEventListener("load", () => { ScrollTrigger.refresh(); syncSmooth(); });
+</script>
+</body>
+</body>
+</html>
