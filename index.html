@@ -363,9 +363,11 @@ p{text-wrap:pretty}
 #abertura{position:relative;overflow:hidden}
 #abertura .ab-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:stretch}
 #abertura .ab-lead{grid-column:1/7;position:relative;z-index:3;margin-bottom:var(--s8)}
+#abertura .ab-lead{max-width:34em}
 #abertura .ab-lead .l{display:block;overflow:hidden}
-/* cada trecho equilibra as proprias linhas: sem linha longa seguida de linha curtissima no celular */
-#abertura .ab-lead .l>span{display:block;text-wrap:balance}
+#abertura .ab-lead .l>span{display:block}
+/* antes do split o texto ja nasce com rag equilibrado */
+#abertura .ab-lead[data-split]{text-wrap:pretty}
 #abertura .fig-a{grid-column:1/8;position:relative;z-index:2}
 #abertura .ab-right{grid-column:9/13;display:flex;flex-direction:column;
   justify-content:space-between;gap:48px;margin-top:-88px;margin-bottom:-56px;
@@ -889,7 +891,7 @@ footer{background:var(--walnut-800);color:var(--bone-100);padding-top:clamp(72px
         <span class="l"><span>feitos na medida</span></span>
         <span class="l"><span>do seu espaço.</span></span>
       </h1>
-      <p class="sub">A serra só liga depois do seu sim. O que você aprova em 3D é o que sobe na sua parede.</p>
+      <p class="sub">Alto padrão começa no que não se vê: a ferragem, a estrutura e o ajuste de cada milímetro.</p>
       <div class="cta-row">
         <a class="btn btn-wa btn-lg wa" data-wa="default" href="#" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span class="ctaL">Pedir meu orçamento no WhatsApp</span></a>
       </div>
@@ -911,16 +913,11 @@ footer{background:var(--walnut-800);color:var(--bone-100);padding-top:clamp(72px
   <div class="pat pat-reguas" aria-hidden="true"></div>
   <div class="wrap-w">
     <div class="ab-grid">
-      <p class="ab-lead lead" id="ab-lead">
-        <span class="l"><span>Na Essenza, cada ambiente é pensado como único.</span></span>
-        <span class="l"><span>A gente cria móveis planejados e projetos sob medida</span></span>
-        <span class="l"><span>que juntam funcionalidade, bom acabamento e o estilo</span></span>
-        <span class="l"><span>de quem vai morar ali.</span></span>
-      </p>
+      <p class="ab-lead lead" id="ab-lead" data-split>Na Essenza, cada ambiente é pensado como único. A gente cria móveis planejados e projetos sob medida que juntam funcionalidade, bom acabamento e o estilo de quem vai morar ali.</p>
       <figure class="fig-a" data-px="-48">
         <img src="assets/ed/ab-grande.jpg" data-srcm="assets/ed/ab-grande.jpg" width="973" height="1200"
-             alt="Cozinha planejada em madeira clara com armários do piso ao teto" loading="lazy" decoding="async">
-        <figcaption class="lbl">Cozinha planejada</figcaption>
+             alt="Sala e cozinha integradas com marcenaria em madeira e teto ripado" loading="lazy" decoding="async">
+        <figcaption class="lbl">Sala e cozinha integradas</figcaption>
       </figure>
       <div class="ab-right">
       <figure class="fig-b" data-px="-90">
@@ -1953,11 +1950,40 @@ function faixas(travel, scrub, center){
   });
 }
 
+/* quebra o paragrafo de abertura nas linhas reais do texto, para o rag ficar parelho
+   em qualquer largura; refaz no resize e devolve o estado revelado quando ja passou */
+function splitLinhas(el){
+  const txt = el.dataset.txt || (el.dataset.txt = el.textContent.trim());
+  el.innerHTML = txt.split(/\s+/).map(w => `<i class="w">${w}</i>`).join(" ");
+  const palavras = [...el.querySelectorAll(".w")];
+  const linhas = []; let topoAtual = null;
+  palavras.forEach(w => {
+    const t = Math.round(w.offsetTop);
+    if (topoAtual === null || t !== topoAtual){ linhas.push([]); topoAtual = t; }
+    linhas[linhas.length - 1].push(w.textContent);
+  });
+  el.innerHTML = linhas.map(l => `<span class="l"><span>${l.join(" ")}</span></span>`).join("");
+  return el.querySelectorAll(".l>span");
+}
+function montarLead(){
+  const el = document.querySelector("#ab-lead"); if (!el) return null;
+  const revelado = el.dataset.revelado === "1";
+  const alvos = splitLinhas(el);
+  if (revelado || reduced) gsap.set(alvos, {yPercent: 0});
+  return alvos;
+}
+let leadT;
+addEventListener("resize", () => { clearTimeout(leadT); leadT = setTimeout(() => {
+  montarLead(); ScrollTrigger.refresh();
+}, 220); });
+
 function reveals(){
   /* abertura: parágrafo linha a linha */
-  gsap.fromTo("#ab-lead .l>span",
+  const leadAlvos = montarLead();
+  if (leadAlvos) gsap.fromTo(leadAlvos,
     {yPercent: 110}, {yPercent: 0, duration: .9, ease: "power3.out", stagger: .06,
-      scrollTrigger: {trigger: "#ab-lead", start: "top 80%", once: true, refreshPriority: prio("#ab-lead")}});
+      scrollTrigger: {trigger: "#ab-lead", start: "top 80%", once: true, refreshPriority: prio("#ab-lead"),
+        onEnter: () => { document.querySelector("#ab-lead").dataset.revelado = "1"; }}});
   /* cards de número */
   gsap.fromTo("#nums-grid .ncard", {y: 28, opacity: 0},
     {y: 0, opacity: 1, duration: .52, ease: "power3.out", stagger: .08,
